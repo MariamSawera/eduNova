@@ -1,0 +1,66 @@
+Container for all instructor cards
+.instructor-grid {
+  display: grid; /* Arrange cards in a grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Make columns responsive */
+  gap: 32px; /* Space between cards */
+  padding: 32px; /* Space inside the container */
+}
+
+/* Style for each instructor card */
+.instructor-card {
+  background-color: white; /* White card background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 24px; /* Space inside the card */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for 3D effect */
+  
+  display: flex; /* Use flexbox for layout inside card */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+}
+
+/* Instructor photo style */
+.instructor-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Keep aspect ratio without stretching */
+  margin-bottom: 16px; /* Space below the image */
+}
+
+/* Instructor name spacing */
+.instructor-card h3 {
+  margin: 8px 0; /* Small top and bottom margin */
+}
+
+/* Subject difficulty badge */
+.difficulty {
+  padding: 4px 10px; /* Space inside the badge */
+  border-radius: 5px; /* Rounded edges */
+  font-size: 13px; /* Slightly smaller text */
+  margin-top: 8px; /* Space above the badge */
+  background-color: #ffcc00; /* Yellow background */
+  color: #333; /* Dark text */
+}
+
+/* Container for resource links */
+.resources {
+  margin-top: 16px; /* Space above resources */
+}
+
+/* Style for each resource button/link */
+.resources a {
+  display: inline-block;
+  margin: 5px; /* Space between links */
+  padding: 6px 12px; /* Inner padding for buttons */
+  background-color: #0077cc; /* Blue background */
+  color: white; /* White text */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Text size */
+}
+
+/* Hover effect on resource links */
+.resources a:hover {
+  background-color: #005fa3; /* Darker blue on hover */
+}

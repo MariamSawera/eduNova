@@ -146,18 +146,18 @@ nav ul li a {
   text-align: center;
 }
 
-.info h3 {
+.book-info h3 {
   margin: 0.5rem 0;
   font-size: 1.1rem;
   color: #222;
 }
 
-.info p {
+.book-info p {
   font-size: 0.9rem;
   color: #555;
 }
 
-.info a {
+.book-info a {
   display: inline-block;
   margin-top: 0.7rem;
   padding: 0.5rem 1rem;
@@ -167,7 +167,7 @@ nav ul li a {
   border-radius: 5px;
 }
 
-.info a:hover {
+.book-info a:hover {
   background: #005fa3;
 }
 
@@ -228,7 +228,7 @@ nav ul li a {
   border-radius: 10px;
   font-size: 15px;
   display: inline-block; */
-  display: inline-block;
+    display: inline-block;
   margin-top: 0.7rem;
   padding: 0.5rem 1rem;
   background: #0077cc;
@@ -240,18 +240,4 @@ nav ul li a {
 
 .resources a:hover {
   background-color: blueviolet;
-}
-
-/* resources.html */
-
-.resources-section {
-  padding: 1.5rem 2rem;
-  background-color: #f9f9f9;
-  margin-bottom: 1rem;
-}
-
-.my-tips, .classmate-tips {
-  padding: 1.5rem 2rem;
-  background-color: #fff9e6;
-  margin-bottom: 1rem;
 }

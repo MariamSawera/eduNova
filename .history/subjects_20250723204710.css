@@ -1,0 +1,10 @@
+
+.instructor-grid{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.instructor-card{
+    background-color: white;
+}

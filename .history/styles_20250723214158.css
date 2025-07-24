@@ -241,17 +241,3 @@ nav ul li a {
 .resources a:hover {
   background-color: blueviolet;
 }
-
-/* resources.html */
-
-.resources-section {
-  padding: 1.5rem 2rem;
-  background-color: #f9f9f9;
-  margin-bottom: 1rem;
-}
-
-.my-tips, .classmate-tips {
-  padding: 1.5rem 2rem;
-  background-color: #fff9e6;
-  margin-bottom: 1rem;
-}

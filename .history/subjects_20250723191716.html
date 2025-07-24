@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instructors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+  <style>
+    
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      background-color: white;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .flip-card-front img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+
+    .flip-card-back {
+      background-color: #0077cc;
+      color: white;
+      transform: rotateY(180deg);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flip-card-back a {
+      color: #fff;
+      text-decoration: underline;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+      <nav>
+    <div class="logo">ClassHub</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#semester">Semesters</a></li>
+      <li><a href="subjects.html">Subjects</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="assignments.html">Assignments</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <!-- <li><a href="#">Announcements</a></li> -->
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1 id="welcome">Hello, Guest 👋</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name" oninput="updateName()" />
+  </div>
+
+
+  <h1>👩‍🏫 Our Instructors</h1>
+
+  <div class="card-container">
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
+          <h3>Ms. Sadaf</h3>
+          <p>Operating Systems</p>
+        </div>
+        <div class="flip-card-back">
+          <p>🧠 Tech-savvy & passionate about OS design.</p>
+          <p>📧 sadaf@example.com</p>
+          <a href="#">📎 View Resources</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Instructor">
+          <h3>Mr. Tanveer</h3>
+          <p>Data Structures</p>
+        </div>
+        <div class="flip-card-back">
+          <p>💡 Loves clean code & logical thinking.</p>
+          <p>📧 tanveer@example.com</p>
+          <a href="#">📝 Lecture Notes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more cards like these -->
+
+  </div>
+
+      <footer class="footer">
+        <p>&copy; 2023 My Web Page</p>
+    </footer>
+
+
+</body>
+</html>
