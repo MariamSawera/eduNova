@@ -1,17 +1,19 @@
 <html>
   <head>
-    <title>My Web Page</title>
+    <title>Exam Section</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
+     
+
   </head>
 <body>
         <nav>
       <div class="logo">ClassHub</div>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#semester">Semesters</a></li>
+        <li><a href="index.html#semester">Semesters</a></li>
         <li><a href="subjects.html">Subjects</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="resources.html">Resources</a></li>
@@ -31,8 +33,86 @@
         <div class="hero">
             <h1>#</h1>
     </div>
+     
+    <div class="heading-exams">
+    <h1 class="heading">Exams </h1>
+    <img src="./images/icons8-clock-48.png" alt="">
+    <!-- <p>Here you can find information about upcoming exams, and schedules.</p> -->
+    </div>
 
-    <h1 class="heading">Helpful Resources</h1>
+  <div id="clock" ></div>
+
+
+    <div class="exam-container">
+      <div class="next-exam">
+        <h2>Upcoming Exams</h2>
+        <p>Total Exams: 2</p>
+        <p>Next Exam: Midterm Exam</p>
+        
+      </div>
+
+      <div class="next-exam"> 
+        <h2>Next Exam</h2>
+        <p>Midterm Exam</p>
+        <p>Date: March 15, 2023</p>
+        <p>Time: 10:00 AM - 12:00 PM</p>
+        <p>Location: Room 101</p>
+
+
+      </div>
+
+      
+    </div>
+    
+    <div class="exam-table">
+<table border="1" cellpadding="10" cellspacing="0">
+<thead>
+  <tr>
+    <th>Sr. No.</th>
+    <th>Subject</th>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Time</th>
+    <th>Room No.</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>Operating Systems</td>
+    <td>01-Aug-2025</td>
+    <td>Friday</td>
+    <td>09:00 AM – 12:00 PM</td>
+    <td>Room 101</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Web Development</td>
+    <td>03-Aug-2025</td>
+    <td>Sunday</td>
+    <td>09:00 AM – 12:00 PM</td>
+    <td>Room 102</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Computer Networks</td>
+    <td>05-Aug-2025</td>
+    <td>Tuesday</td>
+    <td>09:00 AM – 12:00 PM</td>
+    <td>Room 103</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Database Systems</td>
+    <td>07-Aug-2025</td>
+    <td>Thursday</td>
+    <td>09:00 AM – 12:00 PM</td>
+    <td>Room 104</td>
+  </tr>
+</tbody>
+</table>
+
+    </div>
 
 
       <footer class="footer">

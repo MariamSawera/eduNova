@@ -125,14 +125,6 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
 .footer {
   background-color: #004466;
   display: flex;
@@ -361,3 +353,91 @@ nav ul li a {
 .box:hover {
   transform: scale(1.05);
 }
+
+/* exams.html */
+.exam-container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.heading-exams {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+  padding: 10px;
+}
+
+.heading-exams img {
+  width: 40px; 
+  height: auto;
+}
+
+.next-exam {
+
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 40vw;
+
+
+}
+
+.exam-table{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+}
+
+table {
+      border-collapse: collapse;
+      width: 80%;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #005fa3;
+      color: white;
+    }
+
+
+
+
+#clock {
+  margin: 30px auto 25px auto; 
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 30%;
+  text-align: center;
+  background-color: #005fa3;
+
+}
+
+  #clock:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
+  }
+
+
+  /* help.html */
+
+
+
