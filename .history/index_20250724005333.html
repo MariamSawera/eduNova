@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <title>My Web Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">ClassHub</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#semester">Semesters</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="assignments.html">Assignments</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="#">Announcements</a></li> -->
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1 id="welcome">Hello, Guest 👋</h1>
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="Enter your name"
+        oninput="updateName()"
+      />
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="dashboard">
+      <!-- Announcements -->
+      <div class="card" style="background-color: #f9c548">
+        <h3>📢 Announcements</h3>
+        <ul>
+          <li>Assignment Web development due 31 July</li>
+          <li>Classes starting from 15 Aug</li>
+          <li>Movie Day at University Oct 15</li>
+        </ul>
+      </div>
+
+      <!-- Calendar -->
+      <div class="card">
+        <h3>📅 Calendar</h3>
+        <p>All the events and updates have been marked in calender.</p>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=onlinelearningrecordings%40gmail.com&ctz=Asia%2FKarachi"
+          style="border: 0"
+          width="800"
+          height="600"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      </div>
+
+      <!-- Online Users -->
+      <div class="card" style="background-color: lightblue">
+        <h3>🟢 Online Users</h3>
+        <ul>
+          <li>Mariam</li>
+          <li>Sidra</li>
+          <li>Alishba</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Quick Material Access -->
+    <h2 class="heading" id="semester">
+      All academic resources from Semester 1 to the current term are available
+      below.
+    </h2>
+    <div class="quick-links">
+      <div class=" card-semester" > 
+        <img src="./images/green.webp" alt="">
+         <!-- style="background-color: #3ca172" -->
+        <a href="semester1.html">Semester 1</a>
+      </div>
+      <div class="card-semester" >
+        <!-- style="background-color: #223a4e" -->
+         <img src="/images/navyblue.webp" alt="">
+        <a href="semester2.html"> Semester 2</a>
+      </div>
+      <div class="card-semester" >
+        <!-- style="background-color: rgb(192, 245, 108)" -->
+         <img src="./images/skin.jpg" alt="">
+        <a href="semester3.html">Semester 3</a>
+      </div>
+      <div class="card-semester" >
+        <!-- style="background-color: #114f60" -->
+         <img src="./images/skyblue.webp" alt="">
+        <a href="semester4.html"> Semester 4</a>
+      </div>
+      <div class="card-semester" >
+        <!-- style="background-color: lightblue" -->
+         <img src="./images/purpleish.jpg" alt="">
+        <a href="semester5.html"> Semester 5</a>
+      </div>
+      <div class="card-semester" >
+        <!-- style="background-color: #444444" -->
+         <img src="./images/gray.jpg" alt="">
+        <a href="semester6.html">Semester 6</a>
+      </div>
+      <div class="card-semester" >
+        <!-- style="background-color: #d4cbcb" -->
+         <img src="./images/orange.png" alt="">
+        <a href="semester7.html"> Semester 7</a>
+      </div>
+      <div class="card-semester" >
+        <!-- style="background-color: #eb843f" -->
+          <img src="./images/lightgreen.jpg" alt="">
+        <a href="semester8.html">Semester 8</a>
+      </div>
+      <div class="link-card" style="background-color: #f9c548">
+        <a href=""> Past Papers</a>
+      </div>
+      <!-- <div class="link-card" style="background-color: #3CA172;"><a href="">🔗 Important Links</a></div> -->
+    </div>
+  </body>
+
+  <footer class="footer">
+    <p>&copy; 2023 My Web Page</p>
+  </footer>
+</html>
