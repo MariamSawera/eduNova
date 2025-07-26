@@ -17,9 +17,11 @@ searchBar.addEventListener("keyup", function () {
   });
 });
 
+
+
 }
 
-
+//exam
 function  updateClock () {
   const now = new Date ();
   const time = now.toLocaleTimeString();
@@ -28,36 +30,32 @@ function  updateClock () {
 setInterval(updateClock, 1000);
 updateClock();
 
-// Get the form and discussion area elements
+
+//help
+
 var form = document.getElementById("questionForm");
 var discussionArea = document.getElementById("discussionArea");
 
-// When the form is submitted (user asks a question)
 form.addEventListener("submit", function (event) {
-  event.preventDefault(); // stop the page from refreshing
+  event.preventDefault(); 
 
-  // Get the name and question values from the input fields
   var nameInput = document.getElementById("userName");
   var questionInput = document.getElementById("userQuestion");
 
   var name = nameInput.value.trim();
   var question = questionInput.value.trim();
 
-  // If no name is given, use "Anonymous"
   if (name === "") {
     name = "Anonymous";
   }
 
-  // If the question is empty, stop here
   if (question === "") {
     return;
   }
 
-  // Create a new div for the question
   var questionDiv = document.createElement("div");
-  questionDiv.className = "question"; // for styling
+  questionDiv.className = "question"; 
 
-  // Add the question HTML inside the div
   questionDiv.innerHTML =
     "<p><strong>" + name + "</strong> asked:</p>" +
     "<div class='text'>" + question + "</div>" +
@@ -70,22 +68,17 @@ form.addEventListener("submit", function (event) {
       "<div class='replies'></div>" +
     "</div>";
 
-  // Add the new question at the top of the discussion area
   discussionArea.prepend(questionDiv);
 
-  // Clear the form inputs
   nameInput.value = "";
   questionInput.value = "";
 
-  // Now handle replies for this specific question
   var replyForm = questionDiv.querySelector(".replyForm");
   var repliesContainer = questionDiv.querySelector(".replies");
 
-  // When a reply is submitted
   replyForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // Get the name and reply text
     var replyNameInput = replyForm.querySelector("input");
     var replyTextInput = replyForm.querySelector("textarea");
 
@@ -100,18 +93,45 @@ form.addEventListener("submit", function (event) {
       return;
     }
 
-    // Create a new reply element
     var replyDiv = document.createElement("div");
     replyDiv.className = "reply";
     replyDiv.innerHTML =
       "<p><strong>" + replyName + "</strong> replied:</p>" +
       "<div class='text'>" + replyText + "</div>";
 
-    // Add the reply below the question
     repliesContainer.appendChild(replyDiv);
 
-    // Clear the reply form
     replyNameInput.value = "";
     replyTextInput.value = "";
   });
 });
+
+
+//announcement
+window.onload = function () {
+
+  const announcements = [
+    "Assignment Web development due 31 July",
+    "Classes starting from 15 Aug",
+    "Movie Day at University Oct 15"
+  ];
+
+  const listContainer = document.getElementById("announcements-list");
+
+  announcements.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    listContainer.appendChild(li);
+  });
+
+  function addAnnouncement() {
+  const input = document.getElementById("new-announcement");
+  const text = input.value.trim();
+  if (text) {
+    const li = document.createElement("li");
+    li.textContent = text;
+    document.getElementById("announcements-list").appendChild(li);
+    input.value = "";
+  }
+}
+}
