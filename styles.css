@@ -43,6 +43,12 @@ nav ul li a {
   text-decoration: none;
 }
 
+nav ul li a:hover {
+  color: #5ddcdc;
+  transition: color 0.3s ease;
+}
+
+
 .hero {
   /* background: linear-gradient(to right, #00aaff, #00ffcc); */
   background-image: url("./images/banner.jpg");
@@ -102,7 +108,6 @@ nav ul li a {
 
 
 
-
 .card-semester {
   display: flex;
   flex-direction: column; 
@@ -112,8 +117,6 @@ nav ul li a {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s;
   width: 100%;
   padding-bottom: 14px;
 }
@@ -126,13 +129,20 @@ nav ul li a {
 }
 
 .card-text {
-  font-size: 25px;
+  font-size: 1.5rem;
   color: #000000;
   font-weight: 500;
 }
 
 
-
+.card-semester:hover,
+.book-card:hover {
+  background-color: rgb(226, 241, 247);
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: transform 0.2s;
+  transition: all 0.3s ease;
+}
 
 
 .footer {
@@ -161,7 +171,7 @@ nav ul li a {
 }
 
 #searchBar{
-  width: 50%;
+  width: 60%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -177,19 +187,6 @@ nav ul li a {
   top: 5px;
 }
 
-
-/* .search-container button{
-  padding: 8px 12px;
-  background: #000203;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.search-container button:hover {
-  background: #1e90ff;
-} */
 
 .book-container {
   display: flex;
@@ -207,12 +204,14 @@ nav ul li a {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin: 20px ;
 }
 
+
 .book-card img {
+  margin-top: 8px;
   max-width: 100%;
   height: 40vh;
-  border-radius: 5px;
   object-fit: cover;
 }
 
@@ -280,7 +279,7 @@ nav ul li a {
   margin: 8px 0;
 }
 
-.difficulty {
+/* .difficulty {
   font-size: 15px;
   font-weight: bold;
   color: black;
@@ -289,25 +288,18 @@ nav ul li a {
   border-radius: 5px;
   width: 40pxpx;
   display: inline-block;
-}
+} */
 
 .resources {
   margin-top: 10px;
 }
 
 .resources a {
-  /* background-color: rgb(73, 73, 192);
-  margin: 7px;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 10px;
-  font-size: 15px;
-  display: inline-block; */
   
   display: inline-block;
   margin-top: 0.7rem;
   padding: 0.5rem 1rem;
-  background: #0077cc;
+  background: rgb(214, 211, 0);
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -321,48 +313,72 @@ nav ul li a {
 /* resources.html */
 
 .resources-section {
-  padding: 1.5rem 2rem;
-  background-color: #f9f9f9;
-  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
-
-.my-tips, .classmate-tips {
-  padding: 1.5rem 2rem;
-  background-color: #fff9e6;
-  margin-bottom: 1rem;
-}
-
-/* testing */
-
-.box{
-  background-color: white;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ .intro{
   text-align: center;
-  cursor: pointer;
-  transition:  transform 0.2s;
-  width: 30%;
+  margin: 30px auto 20px;
+  padding: 10px;
+  max-width: 800px;
 
+ }
 
+ .intro p{
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.6;
+
+ }
+
+.resources-card {
+  background-color: #ffffff;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
 
 }
 
-.box img{
+
+
+.resources-card img{
   width: 100%;
   max-height: 150px;
   object-fit: cover;
   margin-bottom: 10px;
 }
 
-.box p {
-  font-size: 16px;
+.resources-card h2 {
+  font-size: 20px;
+  margin: 10px 0;
   color: #333;
 }
 
-.box:hover {
+.resources-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.resources-card:hover {
   transform: scale(1.05);
 }
+
+
+
+
 
 /* exams.html */
 .exam-container{
