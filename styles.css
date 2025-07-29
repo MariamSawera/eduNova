@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
   background: #f2f2f2;
-  /* background-color: #B3DDF0; */
+  background-color: white;
 }
 
 nav {
@@ -47,6 +47,7 @@ nav ul li a:hover {
   color: #5ddcdc;
   transition: color 0.3s ease;
 }
+
 
 
 .hero {
@@ -172,9 +173,11 @@ nav ul li a:hover {
 
 #searchBar{
   width: 60%;
-  padding: 8px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 5px;
+  background-color: #fcf8f8;
+  font-size: 25px;
 
 }
 
@@ -184,7 +187,11 @@ nav ul li a:hover {
   margin-left: -35px;
   cursor: pointer;
   position: absolute;
-  top: 5px;
+  top: 15px;
+}
+
+.search-container input:focus{
+  outline: none;
 }
 
 
@@ -463,7 +470,110 @@ table {
   }
 
 
-  /* help.html */
+  /* about.html */
+  .about-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+
+  }
+  
+
+.about-info{
+  width: 30%;
+  font-size: 16px;
+  color: #312f2f;
+  line-height: 1.5;
+  padding: 100px;
+  
+}
+
+/* contact.html */
+.contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
 
+}
 
+.contact h2{
+    margin-bottom: 15px;
+    font-size: 40px;
+
+}
+
+.contact p{
+    font-size: 1.4rem;
+  color: #555;
+
+}
+
+ 
+.contact form {
+  background-color: rgb(243, 241, 101);
+  width: 90%;
+  max-width: 400px;
+  color: hsl(0, 0%, 13%);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact form h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+
+.contact form button {
+  padding: 10px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact form button:hover {
+  background-color: #444;
+}
+
+.quote-box {
+  background-color: #f9f9f9;
+  border-left: 5px solid #ff4f85; /* vivid crimson or any highlight color */
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 500px;
+  font-style: italic;
+  color: #333;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.quote-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.quote-author {
+  font-size: 14px;
+  text-align: right;
+  color: #777;
+}
