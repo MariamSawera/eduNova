@@ -1,29 +1,29 @@
-/* Base nav styling */
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f2f2f2;
-  background-color: white;
-}
 html {
   scroll-behavior: smooth;
 }
 
-html,
-body {
+/* html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+} */
+
+
+body {
+  margin: 0;
+  /* font-family: "Segoe UI", sans-serif; */
+  background: #f2f2f2;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
   background-color: #004466;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 nav .logo {
@@ -31,12 +31,15 @@ nav .logo {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
-  margin: 0;
-  padding: 0;
 }
 
 nav ul li {
@@ -46,50 +49,14 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
-  padding: 0.5rem;
-  display: block;
 }
 
-/* Hamburger menu toggle - hidden on desktop */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #004466;
-    margin-top: 1rem;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul li {
-    text-align: center;
-  }
-}
 nav ul li a:hover {
-  color: #bedcf1;
-}
-/* Optional: smooth transitions */
-nav ul,
-.menu-toggle {
-  transition: all 0.3s ease;
+  color: #5ddcdc;
+  transition: color 0.3s ease;
 }
 
-.hero {
+/* .hero {
   background-image: url("./images/banner.jpg");
   background-size: cover;
   background-position: center;
@@ -101,14 +68,19 @@ nav ul,
   flex-direction: column;
   justify-content: center;
 }
+ */
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 2rem 1rem;
-  }
+
+.hero {
+  /* background: linear-gradient(to right, #00aaff, #00ffcc); */
+  background-image: url("./images/banner.jpg");
+  background-position: center;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  height: 20vh;
 }
+
 
 .dashboard {
   display: grid;
@@ -131,25 +103,27 @@ nav ul,
   gap: 1rem;
 }
 
-.quick-links {
+
+.quick-links  {
+  background: white;
   text-align: center;
   padding: 1rem;
   border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 80px;
 }
 
-a {
-  text-decoration: none;
-  color: rgb(31, 30, 30);
-}
+
+
 
 .card-semester {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
   width: 100%;
   padding-bottom: 14px;
@@ -168,6 +142,7 @@ a {
   font-weight: 500;
 }
 
+
 .card-semester:hover,
 .book-card:hover {
   background-color: rgb(226, 241, 247);
@@ -176,6 +151,7 @@ a {
   transition: transform 0.2s;
   transition: all 0.3s ease;
 }
+
 
 .heading {
   color: #333;
@@ -186,19 +162,21 @@ a {
 
 /* books.html */
 
-.search-container {
+.search-container{
   text-align: center;
   margin-top: 1rem;
   position: relative;
+
 }
 
-#searchBar {
+#searchBar{
   width: 60%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fcf8f8;
   font-size: 25px;
+
 }
 
 .search-icon {
@@ -210,9 +188,10 @@ a {
   top: 15px;
 }
 
-.search-container input:focus {
+.search-container input:focus{
   outline: none;
 }
+
 
 .book-container {
   display: flex;
@@ -230,8 +209,9 @@ a {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin: 20px;
+  margin: 20px ;
 }
+
 
 .book-card img {
   margin-top: 8px;
@@ -304,11 +284,13 @@ a {
   margin: 8px 0;
 }
 
+
 .resources {
   margin-top: 10px;
 }
 
 .resources a {
+  
   display: inline-block;
   margin-top: 0.7rem;
   padding: 0.5rem 1rem;
@@ -316,6 +298,7 @@ a {
   color: white;
   text-decoration: none;
   border-radius: 5px;
+
 }
 
 .resources a:hover {
@@ -333,18 +316,20 @@ a {
   margin: 0 auto;
   padding: 40px 20px;
 }
-.intro {
+ .intro{
   text-align: center;
   margin: 30px auto 20px;
   padding: 10px;
   max-width: 800px;
-}
 
-.intro p {
+ }
+
+ .intro p{
   font-size: 1.5rem;
   color: #333;
   line-height: 1.6;
-}
+
+ }
 
 .resources-card {
   background-color: #ffffff;
@@ -358,9 +343,12 @@ a {
   text-decoration: none;
   color: #000;
   box-sizing: border-box;
+
 }
 
-.resources-card img {
+
+
+.resources-card img{
   width: 100%;
   max-height: 150px;
   object-fit: cover;
@@ -383,8 +371,12 @@ a {
   transform: scale(1.05);
 }
 
+
+
+
+
 /* exams.html */
-.exam-container {
+.exam-container{
   display: flex;
   justify-content: center;
   text-align: center;
@@ -394,18 +386,19 @@ a {
 
 .heading-exams {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
   padding: 10px;
 }
 
 .heading-exams img {
-  width: 40px;
+  width: 40px; 
   height: auto;
 }
 
 .next-exam {
+
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 10px;
@@ -413,33 +406,39 @@ a {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin: 10px;
   width: 40vw;
+
+
 }
 
-.exam-table {
+.exam-table{
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+
 }
 
 table {
-  border-collapse: collapse;
-  width: 80%;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
-}
+      border-collapse: collapse;
+      width: 80%;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 
-th,
-td {
-  padding: 10px;
-  border: 1px solid #ccc;
-}
+    }
 
-th {
-  background-color: #005fa3;
-  color: white;
-}
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #005fa3;
+      color: white;
+    }
+
+
+
 
 #clock {
-  margin: 30px auto 25px auto;
+  margin: 30px auto 25px auto; 
   font-size: 24px;
   font-weight: bold;
   color: white;
@@ -450,28 +449,33 @@ th {
   width: 30%;
   text-align: center;
   background-color: #005fa3;
+
 }
 
-#clock:hover {
-  background-color: #e0e0e0;
-  transform: scale(1.02);
-}
+  #clock:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
+  }
 
-/* about.html */
-.about-container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin: auto;
-  align-items: center;
-}
 
-.about-info {
+  /* about.html */
+  .about-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+
+  }
+  
+
+.about-info{
   width: 30%;
   font-size: 16px;
   color: #312f2f;
   line-height: 1.5;
   padding: 100px;
+  
 }
 
 /* contact.html */
@@ -480,74 +484,91 @@ th {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 30px;
+
 }
-.form-wrapper {
+.form-wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3rem;
   margin: 2%;
+
 }
 
-.contact h2 {
-  margin-bottom: 15px;
-  font-size: 40px;
-  text-align: center;
+
+.contact h2{
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-align: center;
+
 }
 
-.contact p {
-  font-size: 1.4rem;
+.contact p{
+    font-size: 1.4rem;
   color: #555;
   text-align: center;
+
 }
 
-.contact form input,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
+.contact form input, textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
   resize: vertical;
   outline: none;
 }
 
 .contact form button {
-  background-color: #04aa6d;
+  background-color: #04AA6D;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 20px;
-  width: 10rem;
+    font-size: 20px;
+    width: 10rem;
+  
+
 }
 
 .contact form button:hover {
   background-color: #45a049;
+  
 }
 
 
+/* .button-wrapper{
+  display: flex;
+  justify-content: center;
+  
+} */
+
+
 .footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
+   background-color: #222; 
+  color: #fff;            
+  text-align: center;      
   padding: 20px 10px;
   font-size: 14px;
   margin-top: 40px;
   display: block;
-  height: 15vh;
+    height: 15vh;
+
+
 }
 
 .wrapper {
-  min-height: 85vh;
+  min-height: 85vh; 
   padding-bottom: 15vh;
 }
 
+
 .footer p {
-  padding-top: 40px;
+  padding-top: 40px ;
   margin: 5px 0;
 }
 
@@ -566,6 +587,7 @@ textarea {
   margin: 5px 0;
   font-size: 20px;
   font-weight: 400;
+
 }
 
 .assignment-list {
@@ -591,14 +613,15 @@ textarea {
   display: inline-block;
   margin-top: 10px;
   font-weight: bold;
-  color: #04aa6d;
+  color: #04AA6D;
 }
 
 .assignment.completed .status {
   color: gray;
 }
 
-.assignment-link {
+
+.assignment-link{
   border: rgb(99, 94, 94);
   background-color: #cedde7;
   padding: 2px;
@@ -655,8 +678,8 @@ textarea {
   background-color: #ddd;
 }
 
-/* login.html  page: 21*/
-.login-img {
+/* login.html  page: 21*/ 
+.login-img{
   background-image: url("https://www.shutterstock.com/image-vector/vector-illustration-under-construction-sign-260nw-1665084250.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -665,7 +688,11 @@ textarea {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+
+
 }
+
 
 /* semester menu */
 
@@ -686,56 +713,22 @@ textarea {
 }
 
 .semester-menu a:hover {
-  color: #ff4f85;
+  color: #ff4f85; 
 }
 /* current semester */
-
-#curr-semester{
+.card-section{
   text-align: center;
-  background-color: white;
   cursor: pointer;
+
 }
 .sem-image {
   width: 100%;
   max-width: 150px;
   border-radius: 10px;
 }
+ 
 
 
 /* responsive */
-
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-    background-color: #004466;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  nav ul li {
-    text-align: center;
-    padding: 0.5rem 0;
-  }
-}
 
 

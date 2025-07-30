@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Subjects</title>
     <link rel="stylesheet" href="styles.css" />
-    <style></style>
   </head>
   <body>
     <nav>
       <div class="logo">ClassHub</div>
-      <ul>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#semester">Semesters</a></li>
         <li><a href="subjects.html">Subjects</a></li>
@@ -28,24 +28,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero">
-      <h1 id="welcome">Hello, Guest 👋</h1>
-      <input
-        type="text"
-        id="nameInput"
-        placeholder="Enter your name"
-        oninput="updateName()"
-      />
-    </div>
+    <div class="hero"></div>
 
     <h1 class="heading">Our Instructors and Subjects</h1>
-        <div class="intro">
-  <p>
-Explore all subjects here with teacher details, study materials, and helpful YouTube lecture links everything you need in one place to learn better!
-
-  </p>
-</div>
-
+    <div class="intro">
+      <p>
+        Explore all subjects here with teacher details, study materials, and
+        helpful YouTube lecture links everything you need in one place to learn
+        better!
+      </p>
+    </div>
 
     <div class="instructor-container">
       <div class="instructor-card">
@@ -229,12 +221,13 @@ Explore all subjects here with teacher details, study materials, and helpful You
       </div>
     </div>
 
-<footer class="footer">
-  <p>&copy; 2025 ClassHub. All rights reserved.</p>
-  <p>
-    This site is managed by <strong>Mariam Sawera</strong> from
-    <strong>Batch 2k23 – IT, University of Sindh</strong>.
-  </p>
-</footer>
+    <footer class="footer">
+      <p>&copy; 2025 ClassHub. All rights reserved.</p>
+      <p>
+        This site is managed by <strong>Mariam Sawera</strong> from
+        <strong>Batch 2k23 – IT, University of Sindh</strong>.
+      </p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>

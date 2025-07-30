@@ -1,15 +1,16 @@
 <html>
-<head>
+  <head>
     <title>Semester 2</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <nav>
-        <div class="logo">ClassHub</div>
-        <ul>
+      <div class="logo">ClassHub</div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#semester">Semesters</a></li>
         <li><a href="subjects.html">Subjects</a></li>
@@ -19,40 +20,103 @@
         <li><a href="events.html">Events</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="login.html">Login</a></li>
-        </ul>
+      </ul>
     </nav>
-    
+
     <!-- Hero Section -->
     <div class="hero">
-        <h1>Welcome to Semester 2 Resources!</h1>
+      <h1>Welcome to Semester 2 Resources!</h1>
     </div>
-    
+
+    <div class="semester-menu">
+      <a href="semester1.html">Semester 1</a>
+      <a href="semester2.html">Semester 2</a>
+      <a href="semester3.html">Semester 3</a>
+      <a href="semester4.html">Semester 4</a>
+      <a href="semester5.html">Semester 5</a>
+      <a href="semester6.html">Semester 6</a>
+      <a href="semester7.html">Semester 7</a>
+      <a href="semester8.html">Semester 8</a>
+    </div>
+
     <!-- Resources Section -->
     <h2 class="heading">Available Resources for Semester 2</h2>
-    <div class=" quick-links"   >
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1naqPCLMc9mGjxKmGOnTUM9fV8Sh7_-ar?usp=drive_link" target="_blank">Calculus</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1nRxgEXHgKDQ4ypCjaabfpcSpes0L8ryw?usp=drive_link" target="_blank">Digital Logic Design </a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1nm3kfBioYCr0QkE6cjTMG2nKXMd3nmXZ?usp=drive_link" target="_blank">English</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1nhBDc1xgah-9HlVQ8f8UQe6yZx41czWY?usp=drive_link" target="_blank">Islamic Studies / Ethics</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1nIj37DxrNmTlQUz9SyUsPlfRRl7F2uCB?usp=drive_link" target="_blank">Java Programming</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1013mME8j22eaJip78wbZ1QB-dDGhfw2A?usp=drive_link" target="_blank">Philosophy</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1ngyoqGfgnii1AljRvY0lUbq6kteELS_7?usp=drive_link"target="_blank">English</a></div>
+    <div class="quick-links">
+      <a
+        href="https://drive.google.com/drive/folders/1naqPCLMc9mGjxKmGOnTUM9fV8Sh7_-ar?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon2.png" alt="" />
+          <p>Calculus</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1nRxgEXHgKDQ4ypCjaabfpcSpes0L8ryw?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon2.png" alt="" />
+          <p>Digital Logic Design</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1nm3kfBioYCr0QkE6cjTMG2nKXMd3nmXZ?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon2.png" alt="" />
+          <p>English</p>
+        </div>
+      </a>
+      <a
+        href="https://drive.google.com/drive/folders/1nhBDc1xgah-9HlVQ8f8UQe6yZx41czWY?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon2.png" alt="" />
+          <p>Islamic Studies / Ethics</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1nIj37DxrNmTlQUz9SyUsPlfRRl7F2uCB?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon2.png" alt="" />
+          <p>Philosophy</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1013mME8j22eaJip78wbZ1QB-dDGhfw2A?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon2.png" alt="" />
+          <p>Pakistan Studies</p>
+        </div>
+      </a>
+
+      <!-- <a href="https://drive.google.com/drive/folders/1nm3kfBioYCr0QkE6cjTMG2nKXMd3nmXZ?usp=drive_link" target="_blank">
+  <div class="card-semester">
+    <img src="./images/folder-icon.png" alt="">
+    <p>English</p>
+  </div>
+</a> -->
     </div>
 
-
-
-   
-
-    </div>
-    
     <!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2025 ClassHub. All rights reserved.</p>
-  <p>
-    This site is managed by <strong>Mariam Sawera</strong> from
-    <strong>Batch 2k23 – IT, University of Sindh</strong>.
-  </p>
-</footer>
-
-</body>
+    <footer class="footer">
+      <p>&copy; 2025 ClassHub. All rights reserved.</p>
+      <p>
+        This site is managed by <strong>Mariam Sawera</strong> from
+        <strong>Batch 2k23 – IT, University of Sindh</strong>.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,15 +1,16 @@
 <html>
-<head>
+  <head>
     <title>Semester 3</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <nav>
-        <div class="logo">ClassHub</div>
-        <ul>
+      <div class="logo">ClassHub</div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#semester">Semesters</a></li>
         <li><a href="subjects.html">Subjects</a></li>
@@ -19,39 +20,96 @@
         <li><a href="events.html">Events</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="login.html">Login</a></li>
-        </ul>
+      </ul>
     </nav>
-    
+
     <!-- Hero Section -->
     <div class="hero">
-        <h1>Welcome to Semester 3 Resources!</h1>
+      <h1>Welcome to Semester 3 Resources!</h1>
     </div>
-    
+    <div class="semester-menu">
+      <a href="semester1.html">Semester 1</a>
+      <a href="semester2.html">Semester 2</a>
+      <a href="semester3.html">Semester 3</a>
+      <a href="semester4.html">Semester 4</a>
+      <a href="semester5.html">Semester 5</a>
+      <a href="semester6.html">Semester 6</a>
+      <a href="semester7.html">Semester 7</a>
+      <a href="semester8.html">Semester 8</a>
+    </div>
+
     <!-- Resources Section -->
     <h2 class="heading">Available Resources for Semester 3</h2>
-    <div class=" quick-links"   >
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1R_fDS8cZ797mzJoUNALK5CmCeSzFLNEz?usp=drive_link" target="_blank">Computer Organizaion and Assembly language</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1Ro3ENy9ZwMpLgqLNJOYTt3xgJg7P9AX3?usp=drive_link" target="_blank">Datastructures and Algorithms </a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1RUoVfc7yJGG9y0GH6Rf8NaVFJcMZH0cU?usp=drive_link" target="_blank">Introduction to Management</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1Rs_GfnSkNaXx21Myzr1A1FRKXMPBzKuM?usp=drive_link" target="_blank">Linear Algebra</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1RiA-t-4hysOC3GAGiCZ9xZH0OFtb_J-d?usp=drive_link" target="_blank">Probability and Statistics</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1Rhwbmy2kPyiS01qC0sFUpp5nLTja93Ux?usp=drive_link" target="_blank">Software Engineering </a></div>
+    <div class="quick-links">
+      <a
+        href="https://drive.google.com/drive/folders/1R_fDS8cZ797mzJoUNALK5CmCeSzFLNEz?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon3.png" alt="" />
+          <p>Computer Organization and Assembly Language</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1Ro3ENy9ZwMpLgqLNJOYTt3xgJg7P9AX3?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon3.png" alt="" />
+          <p>Data Structures and Algorithms</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1RUoVfc7yJGG9y0GH6Rf8NaVFJcMZH0cU?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon3.png" alt="" />
+          <p>Introduction to Management</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1Rs_GfnSkNaXx21Myzr1A1FRKXMPBzKuM?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon3.png" alt="" />
+          <p>Linear Algebra</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1RiA-t-4hysOC3GAGiCZ9xZH0OFtb_J-d?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon3.png" alt="" />
+          <p>Probability and Statistics</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1Rhwbmy2kPyiS01qC0sFUpp5nLTja93Ux?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon3.png" alt="" />
+          <p>Software Engineering</p>
+        </div>
+      </a>
     </div>
 
-
-
-   
-
-    </div>
-    
     <!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2025 ClassHub. All rights reserved.</p>
-  <p>
-    This site is managed by <strong>Mariam Sawera</strong> from
-    <strong>Batch 2k23 – IT, University of Sindh</strong>.
-  </p>
-</footer>
-
-</body>
+    <footer class="footer">
+      <p>&copy; 2025 ClassHub. All rights reserved.</p>
+      <p>
+        This site is managed by <strong>Mariam Sawera</strong> from
+        <strong>Batch 2k23 – IT, University of Sindh</strong>.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

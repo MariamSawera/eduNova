@@ -1,15 +1,16 @@
 <html>
-<head>
+  <head>
     <title>Resources</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <nav>
-        <div class="logo">ClassHub</div>
-        <ul>
+      <div class="logo">ClassHub</div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#semester">Semesters</a></li>
         <li><a href="subjects.html">Subjects</a></li>
@@ -22,156 +23,171 @@
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="login.html">Login</a></li>
-        </ul>
+      </ul>
     </nav>
-    
+
     <!-- Hero Section -->
-    <div class="hero">
-      <h1 id="welcome">Hello, Guest 👋</h1>
-      <input
-        type="text"
-        id="nameInput"
-        placeholder="Enter your name"
-        oninput="updateName()"
-      />
-    </div>
+    <div class="hero"></div>
 
     <h1 class="heading">Helpful Resources</h1>
     <div class="intro">
-  <p>
-    Here are some of the most useful websites for learning programming, computer science, cybersecurity, and practicing coding all handpicked to help you grow your tech skills.
-  </p>
-</div>
-
-
-
-    
-<div class="resources-section">
-
-  <a href="https://www.w3schools.com/" target="_blank">
-    <div class="resources-card">
-      <img src="./images/w3schools.png" alt="W3Schools">
-      <h2>W3Schools</h2>
       <p>
-        One of the most beginner-friendly websites to learn programming, web development, and more — with interactive tutorials and live examples.
+        Here are some of the most useful websites for learning programming,
+        computer science, cybersecurity, and practicing coding all handpicked to
+        help you grow your tech skills.
       </p>
     </div>
-  </a>
 
-  <a href="https://www.codedex.io/" target="_blank">
-    <div class="resources-card">
-      <img src="./images/codex.jpg" alt="Codex">
-      <h2>Codex</h2>
-      <p>
-        Learn coding by playing games! Codex makes programming fun and interactive for beginners.
-      </p>
+    <div class="resources-section">
+      <a href="https://www.w3schools.com/" target="_blank">
+        <div class="resources-card">
+          <img src="./images/w3schools.png" alt="W3Schools" />
+          <h2>W3Schools</h2>
+          <p>
+            One of the most beginner-friendly websites to learn programming, web
+            development, and more — with interactive tutorials and live
+            examples.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://www.codedex.io/" target="_blank">
+        <div class="resources-card">
+          <img src="./images/codex.jpg" alt="Codex" />
+          <h2>Codex</h2>
+          <p>
+            Learn coding by playing games! Codex makes programming fun and
+            interactive for beginners.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://www.hackerrank.com/" target="_blank">
+        <div class="resources-card">
+          <img src="./images/hackerrank.png" alt="HackerRank" />
+          <h2>HackerRank</h2>
+          <p>
+            Practice coding through challenges, contests, and interview-style
+            problems in multiple languages.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://tryhackme.com/" target="_blank">
+        <div class="resources-card">
+          <img src="./images/tryhackme.png" alt="TryHackMe" />
+          <h2>TryHackMe</h2>
+          <p>
+            Learn cybersecurity through fun, hands-on labs and gamified lessons.
+            Great for beginners.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://cs50.harvard.edu/x/" target="_blank">
+        <div class="resources-card">
+          <img src="./images/cs50.jpg" alt="CS50" />
+          <h2>CS50 by Harvard</h2>
+          <p>
+            One of the best free CS courses by David J. Malan. Learn the
+            fundamentals of programming and computer science with projects.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://gitingest.com/" target="_blank">
+        <div class="resources-card">
+          <img src="./images/gitingest.png" alt="GitIngest" />
+          <h2>GitIngest</h2>
+          <p>
+            Paste a GitHub repo URL and get a visual breakdown of its folder
+            structure, files, and purpose. Great for exploring new codebases.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://visualgo.net/en" target="_blank">
+        <div class="resources-card">
+          <img src="./images/visualgo.png" alt="Visualgo" />
+          <h2>VisuAlgo</h2>
+          <p>
+            Understand data structures and algorithms through interactive
+            animations and visual explanations.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://www.freecodecamp.org/" target="_blank">
+        <div class="resources-card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWxdiT0sLHH7AfQbXEIIGd2rrQ9WB6KlcqQ&s"
+            alt="freecodecamp"
+          />
+          <h2>FreeCodeCamp</h2>
+          <p>
+            freeCodeCamp is a free online platform to learn coding and earn
+            certifications in web development, data science, and more.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://www.csgirlies.com/" target="_blank">
+        <div class="resources-card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4V7zzKRiyJeVLKRn7nO6H2o-9L1M5mvrKFg&s"
+            alt="Csgirlies"
+          />
+          <h2>Computer Science Girlies</h2>
+          <p>
+            Computer Science Girlies is a fun, empowering term for girls and
+            women in tech passionate about coding, problem-solving, and breaking
+            stereotypes in the world of computer science.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://devpost.com/" target="_blank">
+        <div class="resources-card">
+          <img
+            src="data:image/png;base64,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"
+            alt=""
+          />
+          <h2>Devpost</h2>
+          <p>
+            Devpost is a platform where developers showcase projects, join
+            hackathons, and discover coding competitions to build skills, win
+            prizes, and connect with tech communities.
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="https://www.coursera.org/courseraplus?utm_medium=sem&utm_source=gg&utm_campaign=b2c_apac_x_coursera_ftcof_courseraplus_cx_dr_bau_gg_sem_bd-ex_pk_all_m_hyb_23-12_x&campaignid=20882940687&adgroupid=160111577194&device=c&keyword=coursera&matchtype=e&network=g&devicemodel=&creativeid=685615672990&assetgroupid=&targetid=kwd-36262515261&extensionid=&placement=&gad_source=1&gad_campaignid=20882940687&gbraid=0AAAAADdKX6awceEHczmK5SxOmF-lXLLHw&gclid=CjwKCAjwv5zEBhBwEiwAOg2YKPKlcSANtVjMdrm85tdRLUF_O5eaow4sfK-hcHxLr0iMaGY179rdMRoC9M4QAvD_BwE"
+        target="_blank"
+      >
+        <div class="resources-card">
+          <img
+            src="https://infostride.com/wp-content/uploads/2024/06/Thumbnail_508fa1-1200x717.png"
+            alt="Coursera"
+          />
+          <h2>Coursera</h2>
+          <p>
+            Coursera is an online learning platform offering courses,
+            certificates, and degrees from top universities and companies
+            worldwide.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
 
-  <a href="https://www.hackerrank.com/" target="_blank">
-    <div class="resources-card">
-      <img src="./images/hackerrank.png" alt="HackerRank">
-      <h2>HackerRank</h2>
-      <p>
-        Practice coding through challenges, contests, and interview-style problems in multiple languages.
-      </p>
-    </div>
-  </a>
-
-  <a href="https://tryhackme.com/" target="_blank">
-    <div class="resources-card">
-      <img src="./images/tryhackme.png" alt="TryHackMe">
-      <h2>TryHackMe</h2>
-      <p>
-        Learn cybersecurity through fun, hands-on labs and gamified lessons. Great for beginners.
-      </p>
-    </div>
-  </a>
-
-  <a href="https://cs50.harvard.edu/x/" target="_blank">
-    <div class="resources-card">
-      <img src="./images/cs50.jpg" alt="CS50">
-      <h2>CS50 by Harvard</h2>
-      <p>
-        One of the best free CS courses by David J. Malan. Learn the fundamentals of programming and computer science with projects.
-      </p>
-    </div>
-  </a>
-
-  <a href="https://gitingest.com/" target="_blank">
-    <div class="resources-card">
-      <img src="./images/gitingest.png" alt="GitIngest">
-      <h2>GitIngest</h2>
-      <p>
-        Paste a GitHub repo URL and get a visual breakdown of its folder structure, files, and purpose. Great for exploring new codebases.
-      </p>
-    </div>
-  </a>
-
-  <a href="https://visualgo.net/en" target="_blank">
-    <div class="resources-card">
-      <img src="./images/visualgo.png" alt="Visualgo">
-      <h2>VisuAlgo</h2>
-      <p>
-        Understand data structures and algorithms through interactive animations and visual explanations.
-      </p>
-    </div>
-  </a>
-
-    <a href="https://www.freecodecamp.org/" target="_blank">
-    <div class="resources-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWxdiT0sLHH7AfQbXEIIGd2rrQ9WB6KlcqQ&s" alt="freecodecamp">
-      <h2>FreeCodeCamp</h2>
-      <p>
-        freeCodeCamp is a free online platform to learn coding and earn certifications in web development, data science, and more.
-      </p>
-    </div>
-  </a>
-
-    <a href="https://www.csgirlies.com/" target="_blank">
-    <div class="resources-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4V7zzKRiyJeVLKRn7nO6H2o-9L1M5mvrKFg&s" alt="Csgirlies">
-      <h2>Computer Science Girlies</h2>
-      <p>
-        Computer Science Girlies is a fun, empowering term for girls and women in tech passionate about coding, problem-solving, and breaking stereotypes in the world of computer science.
-      </p>
-    </div>
-  </a>
-
-    <a href="https://devpost.com/" target="_blank">
-    <div class="resources-card">
-      <img src="data:image/png;base64,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" alt="">
-      <h2>Devpost</h2>
-      <p>
-        Devpost is a platform where developers showcase projects, join hackathons, and discover coding competitions to build skills, win prizes, and connect with tech communities.
-      </p>
-    </div>
-  </a>
-
-      <a href="https://www.coursera.org/courseraplus?utm_medium=sem&utm_source=gg&utm_campaign=b2c_apac_x_coursera_ftcof_courseraplus_cx_dr_bau_gg_sem_bd-ex_pk_all_m_hyb_23-12_x&campaignid=20882940687&adgroupid=160111577194&device=c&keyword=coursera&matchtype=e&network=g&devicemodel=&creativeid=685615672990&assetgroupid=&targetid=kwd-36262515261&extensionid=&placement=&gad_source=1&gad_campaignid=20882940687&gbraid=0AAAAADdKX6awceEHczmK5SxOmF-lXLLHw&gclid=CjwKCAjwv5zEBhBwEiwAOg2YKPKlcSANtVjMdrm85tdRLUF_O5eaow4sfK-hcHxLr0iMaGY179rdMRoC9M4QAvD_BwE" target="_blank">
-    <div class="resources-card">
-      <img src="https://infostride.com/wp-content/uploads/2024/06/Thumbnail_508fa1-1200x717.png" alt="Coursera">
-      <h2>Coursera</h2>
-      <p>
-        Coursera is an online learning platform offering courses, certificates, and degrees from top universities and companies worldwide.
-      </p>
-    </div>
-  </a>
-
-
-
-
-
-</div>
-    
     <!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2025 ClassHub. All rights reserved.</p>
-  <p>
-    This site is managed by <strong>Mariam Sawera</strong> from
-    <strong>Batch 2k23 – IT, University of Sindh</strong>.
-  </p>
-</footer>
-
-</body>
+    <footer class="footer">
+      <p>&copy; 2025 ClassHub. All rights reserved.</p>
+      <p>
+        This site is managed by <strong>Mariam Sawera</strong> from
+        <strong>Batch 2k23 – IT, University of Sindh</strong>.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

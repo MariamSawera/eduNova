@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const searchBar = document.getElementById("searchBar");    //searchbar on books page
+  const searchBar = document.getElementById("searchBar"); //searchbar on books page
 
   if (searchBar) {
     searchBar.addEventListener("keyup", function () {
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   assignmentSort();
 
-
   //exams page clock
   function updateClock() {
     const now = new Date();
@@ -33,6 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(updateClock, 1000);
   updateClock();
+
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 });
 
 //assignment page (assignment mark complete and sort function)
@@ -68,4 +74,36 @@ function assignmentSort() {
   });
 
   assignmentItems.forEach((item) => assignmentList.appendChild(item));
+
+// tracking semester
+document.addEventListener("DOMContentLoaded", function () {
+  const card = document.getElementById("curr-semester");
+  const anchor = card.querySelector("a");
+  const img = card.querySelector("img");
+  const text = card.querySelector("p");
+
+  const startDate = new Date("2025-08-01");
+  const now = new Date();
+
+  const diffInMonths =
+    (now.getFullYear() - startDate.getFullYear()) * 12 +
+    (now.getMonth() - startDate.getMonth());
+
+  let currentSemester = Math.floor(diffInMonths / 6) + 6;
+
+  if (currentSemester > 8) {
+    anchor.style.display = "none"; 
+    img.src = "images/well-done.png"; 
+    img.alt = "Well Done";
+    text.textContent = "🎉 Degree Completed";
+    heading.textContent = "Congratulations!";
+    return;
+  }
+
+  anchor.href = `semester${currentSemester}.html`;
+  img.src = `images/blue-${currentSemester}.png`;
+  img.alt = `Semester ${currentSemester}`;
+  text.textContent = `Semester ${currentSemester}`;
+});
+
 }

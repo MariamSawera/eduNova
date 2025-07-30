@@ -1,15 +1,16 @@
 <html>
-<head>
+  <head>
     <title>Semester 1</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <nav>
-        <div class="logo">ClassHub</div>
-        <ul>
+      <div class="logo">ClassHub</div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#semester">Semesters</a></li>
         <li><a href="subjects.html">Subjects</a></li>
@@ -19,42 +20,117 @@
         <li><a href="events.html">Events</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="login.html">Login</a></li>
-        </ul>
+      </ul>
     </nav>
-    
+
     <!-- Hero Section -->
-    <div class="hero">
-        <h1>Welcome to Semester 1 Resources!</h1>
+    <div class="hero"></div>
+    <div class="semester-menu">
+      <a href="semester1.html">Semester 1</a>
+      <a href="semester2.html">Semester 2</a>
+      <a href="semester3.html">Semester 3</a>
+      <a href="semester4.html">Semester 4</a>
+      <a href="semester5.html">Semester 5</a>
+      <a href="semester6.html">Semester 6</a>
+      <a href="semester7.html">Semester 7</a>
+      <a href="semester8.html">Semester 8</a>
     </div>
-    
+
     <!-- Resources Section -->
     <h2 class="heading">Available Resources for Semester 1</h2>
-    <div class=" quick-links"   >
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/107JqVOv88Fd92JowXaY-PRxd7YaUVjqE?usp=drive_link" target="_blank">C++ Programing</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1-wXgk55pBIPaTlGGSjHjC05zFuhTXC0J?usp=drive_link" target="_blank">C++ Weekly Manual </a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/10LtCkj5NTZ55ltIwCDD5zz6DSAjf3nnH?usp=drive_link" target="_blank">Discrete Mathematics</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/10BQ2rqRyouELCtNv4xKEXuyZJgSYMjdB?usp=drive_link" target="_blank">Electronic Devices</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/10KPI5x9fh2YeOktNCOFIZnkyhQiEcjKa?usp=drive_link" target="_blank">Information Communication Technology</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/10l_7g8jQ9fqraMbjIqZynxW4N8hcbFr2?usp=drive_link" target="_blank">Mathematics (pre-medical)</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/1013mME8j22eaJip78wbZ1QB-dDGhfw2A?usp=drive_link" target="_blank">Pakistan Studies</a></div>
-        <div class="link-card" style="color: black;"><a href="https://drive.google.com/drive/folders/10gWOP3mKbQupVoY0L6sB0ZBs8oteaTOw?usp=drive_link"target="_blank">English</a></div>
+    <div class="quick-links">
+      <a
+        href="https://drive.google.com/drive/folders/107JqVOv88Fd92JowXaY-PRxd7YaUVjqE?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon.png" alt="" />
+          <p>C++ Programming</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1-wXgk55pBIPaTlGGSjHjC05zFuhTXC0J?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon.png" alt="" />
+          <p>C++ Weekly Manual</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/10LtCkj5NTZ55ltIwCDD5zz6DSAjf3nnH?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="images/folder-icon.png" alt="" />
+          <p>Discrete Mathematics</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/10BQ2rqRyouELCtNv4xKEXuyZJgSYMjdB?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon.png" alt="" />
+          <p>Electronic Devices</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/10KPI5x9fh2YeOktNCOFIZnkyhQiEcjKa?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon.png" alt="" />
+          <p>Information Communication Technology</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/10l_7g8jQ9fqraMbjIqZynxW4N8hcbFr2?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon.png" alt="" />
+          <p>Mathematics (pre-medical)</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1013mME8j22eaJip78wbZ1QB-dDGhfw2A?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon.png" alt="" />
+          <p>Pakistan Studies</p>
+        </div>
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/10gWOP3mKbQupVoY0L6sB0ZBs8oteaTOw?usp=drive_link"
+        target="_blank"
+      >
+        <div class="card-semester">
+          <img src="./images/folder-icon.png" alt="" />
+          <p>English</p>
+        </div>
+      </a>
     </div>
 
-    
-
-
-   
-
-    </div>
-    
     <!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2025 ClassHub. All rights reserved.</p>
-  <p>
-    This site is managed by <strong>Mariam Sawera</strong> from
-    <strong>Batch 2k23 – IT, University of Sindh</strong>.
-  </p>
-</footer>
-
-</body>
+    <footer class="footer">
+      <p>&copy; 2025 ClassHub. All rights reserved.</p>
+      <p>
+        This site is managed by <strong>Mariam Sawera</strong> from
+        <strong>Batch 2k23 – IT, University of Sindh</strong>.
+      </p>
+      <a href="https://www.flaticon.com/free-icons/folder" title="folder icons"
+        >Folder icons created by IYAHICON - Flaticon</a
+      >
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
