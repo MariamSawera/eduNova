@@ -685,7 +685,7 @@ textarea {
 }
 
 .semester-menu a:hover {
-  color: #ff4f85;
+  color: #67b642;
 }
 /* current semester */
 
@@ -820,3 +820,4 @@ button:hover {
   justify-content: space-evenly;
   align-items: center;
 }
+
