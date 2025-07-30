@@ -4,9 +4,10 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
+  /* font-family: "Segoe UI", sans-serif; */
   background: #f2f2f2;
   background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -145,15 +146,6 @@ nav ul li a:hover {
   transition: all 0.3s ease;
 }
 
-
-.footer {
-  background-color: #004466;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  height: 15vh;
-}
 
 .heading {
   color: #333;
@@ -491,89 +483,210 @@ table {
 }
 
 /* contact.html */
-.contact {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 
+.contact {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 30px;
 
 }
+.form-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  margin: 2%;
+
+}
+
 
 .contact h2{
     margin-bottom: 15px;
     font-size: 40px;
+    text-align: center;
 
 }
 
 .contact p{
     font-size: 1.4rem;
   color: #555;
-
-}
-
- 
-.contact form {
-  background-color: rgb(243, 241, 101);
-  width: 90%;
-  max-width: 400px;
-  color: hsl(0, 0%, 13%);
-  padding: 20px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact form h2 {
   text-align: center;
-  margin-bottom: 15px;
+
 }
 
-.contact form input,
-.contact form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  font-family: inherit;
+.contact form input, textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical;
+  outline: none;
 }
-
 
 .contact form button {
-  padding: 10px;
-  background-color: #222;
-  color: #fff;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
   border: none;
   border-radius: 4px;
-  font-size: 15px;
   cursor: pointer;
-  transition: background-color 0.3s;
+    font-size: 20px;
+    width: 10rem;
+  
+
 }
 
 .contact form button:hover {
-  background-color: #444;
+  background-color: #45a049;
+  
 }
 
-.quote-box {
-  background-color: #f9f9f9;
-  border-left: 5px solid #ff4f85; /* vivid crimson or any highlight color */
-  margin: 30px auto;
-  padding: 20px;
-  max-width: 500px;
-  font-style: italic;
-  color: #333;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
+.button-wrapper{
+  display: flex;
+  justify-content: center;
+  
 }
 
-.quote-text {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
 
-.quote-author {
+.footer {
+   background-color: #222; 
+  color: #fff;            
+  text-align: center;      
+  padding: 20px 10px;
   font-size: 14px;
-  text-align: right;
-  color: #777;
+  margin-top: 40px;
+  display: block;
+    height: 15vh;
+
+
+}
+
+.footer p {
+  padding-top: 40px ;
+  margin: 5px 0;
+}
+
+/* assignments.html */
+
+.assignment-container {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.subject-info p {
+  text-align: center;
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: 400;
+
+}
+
+.assignment-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.assignment {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.assignment.completed {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.assignment .status {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #04AA6D;
+}
+
+.assignment.completed .status {
+  color: gray;
+}
+
+
+.assignment-link{
+  border: rgb(99, 94, 94);
+  background-color: #cedde7;
+  padding: 2px;
+}
+
+/* //events.html */
+.events-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ffffff40;
+  border-radius: 15px;
+  padding: 25px;
+  width: 270px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+}
+
+.event-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #0f0f0f;
+}
+
+.event-card p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  color: #0f0f0f;
+}
+
+.event-card button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-card button:hover {
+  background-color: #ddd;
+}
+
+/* login.html  page: 21*/ 
+.login-img{
+  background-image: url("https://www.shutterstock.com/image-vector/vector-illustration-under-construction-sign-260nw-1665084250.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+
+
 }
