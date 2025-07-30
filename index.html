@@ -32,18 +32,16 @@
       <!-- Hero Section -->
       <div class="hero"></div>
 
-      <div id="dynamic-intro" style="text-align: center; font-size: 1.2rem; margin: 20px;"></div>
+      <div id="dynamic-intro"></div>
 
-
-      <div class="card" id="curr-semester">
+      
+      <div class="" id="curr-semester">
         <h3>🎓 Current Semester</h3>
         <a href="semester6.html">
           <img src="images/blue-6.png" alt="Semester 6" class="sem-image" />
         </a>
         <p>Semester 6</p>
       </div>
-
-
 
       <div id="done-message" style="display: none; text-align: center">
         <img
@@ -85,8 +83,11 @@
           <h3>🟢 Online Users</h3>
           <ul>
             <li>Mariam</li>
+            <li>Tahira</li>
+            <li>Jaweria</li>
             <li>Sidra</li>
             <li>Alishba</li>
+            <li>Dua</li>
           </ul>
         </div>
       </div>
@@ -153,14 +154,14 @@
           </div>
         </a>
 
-        <a href="">
+        <a
+          href="https://drive.google.com/drive/folders/1cDzv-c48mqFQHS146wP5JUacVRG-RrLZ?usp=drive_link"
+        >
           <div class="card-semester">
-            <img src="./images/book-bookmark-icon_34486.png" alt="" />
+            <img src="./images/book-bookmark-icon_34486.png" alt="book-icon" />
             <p class="card-text">Past Papers</p>
           </div>
         </a>
-
-        <!-- <div class="link-card" style="background-color: #3CA172;"><a href="">🔗 Important Links</a></div> -->
       </div>
       <script src="script.js"></script>
     </div>
@@ -171,37 +172,40 @@
         This site is managed by <strong>Mariam Sawera</strong> from
         <strong>Batch 2k23 – IT, University of Sindh</strong>.
       </p>
-
       <a href="https://www.flaticon.com/" title="icons"
         >All icons from - Flaticon</a
       >
     </footer>
 
     <!-- <script src="script.js"></script> -->
-     <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const intro = document.getElementById("dynamic-intro");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const intro = document.getElementById("dynamic-intro");
 
-  const now = new Date();
-  const utcHour = now.getUTCHours();
-  const pkHour = (utcHour + 8) % 24;
+        const now = new Date();
+        const utcHour = now.getUTCHours();
+        const pkHour = (utcHour + 5) % 24;
 
-  let greet;
-  if (pkHour < 12) greet = "Good morning";
-  else if (pkHour < 18) greet = "Good afternoon";
-  else greet = "Good evening";
+        let greet;
+        if (pkHour < 12) greet = "Good morning ☕";
+        else if (pkHour < 18) greet = "Good afternoon ☀️";
+        else greet = "Good evening ✨";
 
-  const startDate = new Date("2023-08-01");
-  const monthsPassed = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
-  const currentSemester = Math.floor(monthsPassed / 6) + 1;
+        const startDate = new Date("2025-08-01");
 
-  let semMessage = currentSemester > 8
-    ? "You've completed all semesters – well done!"
-    : `You're currently in Semester ${currentSemester}. Keep going!`;
+        const diffInMonths =
+          (now.getFullYear() - startDate.getFullYear()) * 12 +
+          (now.getMonth() - startDate.getMonth());
 
-  intro.textContent = `${greet}, welcome to your academic portal! ${semMessage}`;
-});
+        const currentSemester = Math.floor(diffInMonths / 6) + 6;
 
-     </script>
+        let semMessage =
+          currentSemester > 8
+            ? "You've completed all semesters – well done!"
+            : `You're currently in Semester ${currentSemester}. Keep going! `;
+
+        intro.textContent = `${greet} Welcome to your academic portal! ${semMessage}`;
+      });
+    </script>
   </body>
 </html>

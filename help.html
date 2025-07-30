@@ -5,60 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Help & Discussion</title>
-    <style>
-      h1 {
-        text-align: center;
-        color: #333;
-      }
-
-      .discussion-box {
-        max-width: 700px;
-        margin: 20px auto;
-        background: #ffffff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .question,
-      .reply {
-        margin-bottom: 15px;
-      }
-
-      .question .text,
-      .reply .text {
-        background: #e2e8f0;
-        padding: 10px;
-        border-radius: 5px;
-      }
-
-      .reply-box {
-        margin-left: 20px;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-
-      button {
-        padding: 8px 16px;
-        background-color: #2563eb;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #1d4ed8;
-      }
-    </style>
   </head>
   <body>
     <nav>
@@ -85,7 +31,15 @@
 
     <div class="hero"></div>
 
-    <h1>Ask a Question</h1>
+    <h1 class="heading">Ask a Question</h1>
+    <div class="intro">
+      <p>
+    Stuck somewhere? Need advice or confused about a topic? This page is here to help!  
+    Feel free to ask questions, share your doubts, or seek guidance, we're here to support you.
+      </p>
+    </div>
+
+
 
     <div class="discussion-box">
       <form id="questionForm">
@@ -96,7 +50,7 @@
           placeholder="Type your question..."
           required
         ></textarea>
-        <button type="submit">Post Question</button>
+        <button class="help-button" type="submit">Post Question</button>
       </form>
 
       <div id="discussionArea"></div>

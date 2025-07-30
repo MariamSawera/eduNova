@@ -1,5 +1,3 @@
-/* Base nav styling */
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f2f2f2;
@@ -50,7 +48,6 @@ nav ul li a {
   display: block;
 }
 
-/* Hamburger menu toggle - hidden on desktop */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -83,14 +80,13 @@ nav ul li a {
 nav ul li a:hover {
   color: #bedcf1;
 }
-/* Optional: smooth transitions */
 nav ul,
 .menu-toggle {
   transition: all 0.3s ease;
 }
 
 .hero {
-  background-image: url("./images/banner.jpg");
+  background-image: url("./images/banner_img.png");
   background-size: cover;
   background-position: center;
   color: white;
@@ -525,6 +521,9 @@ textarea {
   width: 10rem;
 }
 
+.button-wrapper{
+  text-align: center;
+}
 .contact form button:hover {
   background-color: #45a049;
 }
@@ -655,7 +654,7 @@ textarea {
   background-color: #ddd;
 }
 
-/* login.html  page: 21*/
+/* login.html  page: 21 added for later improvement after assignment submission*/ 
 .login-img {
   background-image: url("https://www.shutterstock.com/image-vector/vector-illustration-under-construction-sign-260nw-1665084250.jpg");
   background-repeat: no-repeat;
@@ -739,3 +738,85 @@ textarea {
 }
 
 
+#dynamic-intro{
+  text-align: center; 
+  font-size: 1.2rem;
+   margin: 20px;
+}
+
+/* help page */
+.discussion-box {
+  max-width: 700px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+.question-post {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 15px;
+  background: #f9f9f9;
+}
+
+.reply-btn {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.reply-form {
+  margin-top: 10px;
+}
+
+.reply-form input,
+.reply-form textarea {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.replies {
+  margin-top: 10px;
+  padding-left: 15px;
+  border-left: 2px solid #ddd;
+}
+
+.reply {
+  background: #fff;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #eee;
+}
+
+
+.index-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
