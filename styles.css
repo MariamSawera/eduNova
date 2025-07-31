@@ -121,14 +121,12 @@ nav ul,
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Tablet (2 cards per row) */
 @media screen and (max-width: 1024px) {
   .dashboard {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile (1 card per row) */
 @media screen and (max-width: 768px) {
   .dashboard {
     grid-template-columns: 1fr;
@@ -151,7 +149,6 @@ nav ul,
   border-radius: 10px;
 }
 
-/* Tablet: 2 columns */
 @media screen and (max-width: 1024px) {
   .quick-links {
     grid-template-columns: repeat(2, minmax(150px, 1fr));
@@ -159,7 +156,6 @@ nav ul,
   }
 }
 
-/* Mobile: 1 column */
 @media screen and (max-width: 768px) {
   .quick-links {
     grid-template-columns: 1fr;
@@ -300,6 +296,33 @@ a {
   background: #005fa3;
 }
 
+.book-card {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.book-card h3,
+.book-card p,
+.book-card a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 1024px) {
+  .book-card {
+    width: 40%;
+  }
+}
+
+/* Small screens (mobiles) */
+@media screen and (max-width: 768px) {
+  .book-card {
+    width: 90%;
+  }
+}
+
+
 /* subjects.html */
 .instructor-container {
   display: flex;
@@ -323,7 +346,14 @@ a {
   border-radius: 30px;
   margin-bottom: 1rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+
 }
+.instructor-card a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
 
 .instructor-card img {
   border-radius: 50%;
@@ -350,6 +380,17 @@ a {
 
 .resources a:hover {
   background-color: blueviolet;
+}
+@media screen and (max-width: 1024px) {
+  .instructor-card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .instructor-card {
+    width: 80%;
+  }
 }
 
 /* resources.html */
@@ -409,9 +450,25 @@ a {
   line-height: 1.5;
 }
 
+
 .resources-card:hover {
   transform: scale(1.05);
 }
+
+/* Tablet screens */
+@media screen and (max-width: 1024px) {
+  .resources-card {
+    width: 80%;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+  .resources-card {
+    width: 100%;
+  }
+}
+
 
 /* exams.html */
 .exam-container {
@@ -504,6 +561,34 @@ th {
   padding: 100px;
 }
 
+.about-info {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+  .about-info {
+    width: 80%;
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .about-info {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+
 /* contact.html */
 
 .contact {
@@ -562,6 +647,10 @@ textarea {
   background-color: #45a049;
 }
 
+.wrapper {
+  min-height: 85vh;
+  padding-bottom: 15vh;
+}
 
 .footer {
   background-color: #222;
@@ -574,15 +663,29 @@ textarea {
   height: 15vh;
 }
 
-.wrapper {
-  min-height: 85vh;
-  padding-bottom: 15vh;
-}
 
-.footer p {
+.footer p a{
   padding-top: 40px;
   margin: 5px 0;
 }
+
+/* Responsive footer fix */
+@media screen and (max-width: 768px) {
+  .footer {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .footer p,
+  .footer a {
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    word-break: break-word;
+  }
+}
+
+
 
 /* assignments.html */
 
@@ -688,17 +791,6 @@ textarea {
   background-color: #ddd;
 }
 
-/* login.html  page: 21 added for later improvement after assignment submission*/ 
-/* .login-img {
-  background-image: url("https://www.shutterstock.com/image-vector/vector-illustration-under-construction-sign-260nw-1665084250.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-} */
 
 /* semester menu */
 
