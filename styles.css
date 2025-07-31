@@ -463,23 +463,6 @@ a {
 
 }
 
-@media screen and (max-width: 768px) {
-  .exam-container {
-    flex-direction: column; 
-    align-items: center; 
-  }
-    .exam-table {
-    overflow-x: auto;
-    width: 100%;
-    padding: 0 1rem;
-  }
-
-  table {
-    width: 1000px;
-  }
-
-}
-
 
 
 
@@ -515,8 +498,9 @@ a {
 
 table {
   border-collapse: collapse;
-  width: 80%;
+  width: 100%;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 30px;
 }
 
 th,
