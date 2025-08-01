@@ -537,7 +537,7 @@ th {
 /* about.html */
 .about-container {
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: center;
   margin: auto;
   align-items: center;
@@ -552,21 +552,14 @@ th {
   
 }
 
+
 .about-container img {
   max-width: 100%;
-  width: 100%;
   height: auto;
-  border-radius: 8px; 
-  object-fit: cover; 
+  display: block;
+  margin: 0 auto; /* optional: centers the image */
 }
 
-
-.about-info {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  box-sizing: border-box;
-}
 
 @media screen and (max-width: 1024px) {
   .about-info {
@@ -946,11 +939,6 @@ button:hover {
   justify-content: space-evenly;
   align-items: center;
 }
-
-
-
-
-
 
 .login-button{
   margin: 10px ;

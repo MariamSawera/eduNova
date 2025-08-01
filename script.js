@@ -48,7 +48,7 @@ function assignmentSort() {
 
   assignments.forEach((item) => {
     const deadlineStr = item.getAttribute("deadline-date");
-    const deadline = new Date(deadlineStr);
+    const deadline = new Date(deadlineStr); 
 
     if (today > deadline) {
       item.classList.add("completed");
