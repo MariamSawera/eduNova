@@ -352,7 +352,7 @@ a {
 }
 
 .resources a:hover {
-  background-color: blueviolet;
+  background-color: rgb(238, 237, 172);
 }
 @media screen and (max-width: 1024px) {
   .instructor-card {
