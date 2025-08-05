@@ -932,3 +932,42 @@ button:hover {
 }
 
 
+/* announcemnt card */
+
+.announcement-card {
+  background-color: #fff7e6;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.announcement-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #cc5500;
+  border-bottom: 2px solid #ffae42;
+  padding-bottom: 0.3rem;
+}
+
+.announcement-card ul {
+  margin-top: 1rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.announcement-card li {
+  background-color: #ffffff;
+          /* background: #eaffea; */
+
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.7rem;
+  border-left: 4px solid #28a745;
+  border-radius: 6px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.announcement-card li:hover {
+  background: #f1f1f1;
+}

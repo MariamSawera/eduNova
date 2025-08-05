@@ -58,13 +58,16 @@
       <!-- Dashboard Section -->
       <div class="dashboard">
         <!-- Announcements -->
-        <div class="card" style="background-color: #f9c548">
+        <div class="card announcement-card">
           <h3>📢 Announcements</h3>
-          <ul id="announcements-list">
+          <!-- <ul id="announcements-list">
             <li>Assignment Web development due 31 July</li>
             <li>Classes starting from 15 Aug</li>
             <li>Movie Day at University Oct 15</li>
-          </ul>
+          </ul> -->
+          <div id="announcement" class="notice">
+            Loading latest announcements...
+          </div>
         </div>
 
         <!-- Calendar -->
@@ -202,7 +205,7 @@
         } else if (pkHour >= 18 && pkHour < 21) {
           greet = "Good evening ✨";
         } else {
-          greet = "Greeting! 🌙";
+          greet = "Greetings! 🌙";
         }
 
         const startDate = new Date("2025-08-01");
@@ -221,6 +224,31 @@
         const lines = [greet, "Welcome to your academic portal!", semMessage];
 
         intro.innerHTML = lines.join("<br>");
+
+        // announcement card
+
+        fetch(
+          "https://opensheet.elk.sh/1TagnEqQ8JUZLzcBMFUgmLDw1XEQ5E1M8pZ_BKB2yiCo/Sheet1"
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            const announcementDiv = document.getElementById("announcement");
+
+            if (data.length) {
+              const ul = document.createElement("ul");
+
+              data.forEach((item) => {
+                const li = document.createElement("li");
+                li.textContent = item.message || "(no message)";
+                ul.appendChild(li);
+              });
+
+              announcementDiv.innerHTML = "";
+              announcementDiv.appendChild(ul);
+            } else {
+              announcementDiv.innerText = "No announcements right now.";
+            }
+          });
       });
     </script>
   </body>

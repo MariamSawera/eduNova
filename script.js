@@ -191,4 +191,11 @@ document.addEventListener("DOMContentLoaded", function () {
     typeWriter();
 
 
+  
+
+
+//  .then(res => res.json()
+//  ).then(data => {
+//   document.getElementById("announcement").innerText = data[0].message;
+//  });
 
