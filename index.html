@@ -1,8 +1,14 @@
 <html>
   <head>
-    <title>My Web Page</title>
+    <title>2k23connect</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="image/png"
+      sizes="96x96"
+      rel="icon"
+      href="./images/icons8-star-filled-96.png"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -32,7 +38,6 @@
 
       <div id="dynamic-intro"></div>
 
-      
       <div id="curr-semester">
         <h3>🎓 Current Semester</h3>
         <a href="semester6.html">
@@ -67,7 +72,12 @@
           <h3>📅 Calendar</h3>
           <p>All the events and updates have been marked in calender.</p>
           <iframe
-            src="https://calendar.google.com/calendar/embed?src=onlinelearningrecordings%40gmail.com&ctz=Asia%2FKarachi"
+            src="https://calendar.google.com/calendar/embed?src=sindhuniversity2k23%40gmail.com&ctz=Asia%2FKarachi"
+            style="border: 0"
+            width="800"
+            height="600"
+            frameborder="0"
+            scrolling="no"
             style="border: 0"
             width="800"
             height="600"
@@ -185,9 +195,15 @@
         const pkHour = (utcHour + 5) % 24;
 
         let greet;
-        if (pkHour < 12) greet = "Good morning ☕";
-        else if (pkHour < 18) greet = "Good afternoon ☀️";
-        else greet = "Good evening ✨";
+        if (pkHour >= 5 && pkHour < 12) {
+          greet = "Good morning ☕";
+        } else if (pkHour >= 12 && pkHour < 18) {
+          greet = "Good afternoon ☀️";
+        } else if (pkHour >= 18 && pkHour < 21) {
+          greet = "Good evening ✨";
+        } else {
+          greet = "Greeting! 🌙";
+        }
 
         const startDate = new Date("2025-08-01");
 
@@ -202,7 +218,9 @@
             ? "You've completed all semesters – well done!"
             : `You're currently in Semester ${currentSemester}. Keep going! `;
 
-        intro.textContent = `${greet} Welcome to your academic portal! ${semMessage}`;
+        const lines = [greet, "Welcome to your academic portal!", semMessage];
+
+        intro.innerHTML = lines.join("<br>");
       });
     </script>
   </body>
