@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   assignmentSort();
 
+  // dark mode
+
   //exams page clock
   function updateClock() {
     const now = new Date();
@@ -187,3 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     typeWriter();
+
+
+
