@@ -639,7 +639,6 @@ textarea {
   margin: 5px 0;
 }
 
-/* Responsive footer fix */
 @media screen and (max-width: 768px) {
   .footer {
     height: auto;
