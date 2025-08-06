@@ -227,6 +227,24 @@ a {
   outline: none;
 }
 
+@media (max-width: 600px) {
+  .search-wrapper {
+    width: 90%; 
+  }
+
+  #searchBar {
+    font-size: 18px;
+    padding: 10px 35px 10px 10px;
+  }
+
+  .search-icon {
+    width: 20px;
+    height: 20px;
+    right: 8px;
+  }
+}
+
+
 .book-container {
   display: flex;
   justify-content: center;
