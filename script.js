@@ -1,26 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const searchBar = document.getElementById("searchBar"); //searchbar on books page
+  // const searchBar = document.getElementById("searchBar"); //searchbar on books page
 
-  if (searchBar) {
+  // if (searchBar) {
+  //   searchBar.addEventListener("keyup", function () {
+  //     const input = searchBar.value.toLowerCase();
+  //     const books = document.querySelectorAll(".book-container .book-card");
+
+  //     books.forEach(function (book) {
+  //       const text = book.textContent.toLowerCase();
+
+  //       if (text.includes(input)) {
+  //         book.style.display = "";
+  //       } else {
+  //         book.style.display = "none";
+  //       }
+  //     });
+  //   });
+  // }
+
+  function setupSearch(inputId, cardSelectors) {
+    const searchBar = document.getElementById(inputId);
+
+    if (!searchBar) return;
+
     searchBar.addEventListener("keyup", function () {
       const input = searchBar.value.toLowerCase();
-      const books = document.querySelectorAll(".book-container .book-card");
+      const cards = document.querySelectorAll(cardSelectors);
 
-      books.forEach(function (book) {
-        const text = book.textContent.toLowerCase();
-
-        if (text.includes(input)) {
-          book.style.display = "";
-        } else {
-          book.style.display = "none";
-        }
+      cards.forEach(function (card) {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(input) ? "" : "none";
       });
     });
   }
 
-  assignmentSort();
+  // Books Page
+  setupSearch("searchBar", ".book-container .book-card");
 
-  // dark mode
+  //  Instructors Page
+  setupSearch("searchBar", ".instructor-container .instructor-card");
+
+  assignmentSort();
 
   //exams page clock
   function updateClock() {
@@ -50,7 +70,7 @@ function assignmentSort() {
 
   assignments.forEach((item) => {
     const deadlineStr = item.getAttribute("deadline-date");
-    const deadline = new Date(deadlineStr); 
+    const deadline = new Date(deadlineStr);
 
     if (today > deadline) {
       item.classList.add("completed");
@@ -76,8 +96,6 @@ function assignmentSort() {
   });
 
   assignmentItems.forEach((item) => assignmentList.appendChild(item));
-
-  
 }
 // tracking semester
 document.addEventListener("DOMContentLoaded", function () {
@@ -96,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentSemester = Math.floor(diffInMonths / 6) + 6;
 
   if (currentSemester > 8) {
-    anchor.style.display = "none"; 
-    img.src = "images/well-done.png"; 
+    anchor.style.display = "none";
+    img.src = "images/well-done.png";
     img.alt = "Well Done";
     text.textContent = "🎉 Degree Completed";
     heading.textContent = "Congratulations!";
@@ -111,91 +129,81 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //help page.
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("questionForm");
-    const nameInput = document.getElementById("userName");
-    const questionInput = document.getElementById("userQuestion");
-    const discussionArea = document.getElementById("discussionArea");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("questionForm");
+  const nameInput = document.getElementById("userName");
+  const questionInput = document.getElementById("userQuestion");
+  const discussionArea = document.getElementById("discussionArea");
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      const name = nameInput.value.trim();
-      const question = questionInput.value.trim();
+    const name = nameInput.value.trim();
+    const question = questionInput.value.trim();
 
-      if (!question) return;
+    if (!question) return;
 
-      const post = document.createElement("div");
-      post.classList.add("question-post");
+    const post = document.createElement("div");
+    post.classList.add("question-post");
 
-      post.innerHTML = `
+    post.innerHTML = `
         <strong>${name || "Anonymous"} asked:</strong>
         <p>${question}</p>
         <button class="reply-btn">Reply</button>
         <div class="replies"></div>
       `;
 
-      discussionArea.prepend(post);
+    discussionArea.prepend(post);
 
-      nameInput.value = "";
-      questionInput.value = "";
+    nameInput.value = "";
+    questionInput.value = "";
 
-      const replyBtn = post.querySelector(".reply-btn");
-      const repliesContainer = post.querySelector(".replies");
+    const replyBtn = post.querySelector(".reply-btn");
+    const repliesContainer = post.querySelector(".replies");
 
-      replyBtn.addEventListener("click", function () {
-        if (post.querySelector(".reply-form")) return;
+    replyBtn.addEventListener("click", function () {
+      if (post.querySelector(".reply-form")) return;
 
-        const replyForm = document.createElement("form");
-        replyForm.classList.add("reply-form");
-        replyForm.innerHTML = `
+      const replyForm = document.createElement("form");
+      replyForm.classList.add("reply-form");
+      replyForm.innerHTML = `
           <input type="text" class="reply-name" placeholder="Your Name (optional)" />
           <textarea class="reply-text" rows="2" placeholder="Your reply..." required></textarea>
           <button type="submit">Post Reply</button>
         `;
 
-        repliesContainer.before(replyForm);
+      repliesContainer.before(replyForm);
 
-        replyForm.addEventListener("submit", function (e) {
-          e.preventDefault();
+      replyForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-          const replyName = replyForm.querySelector(".reply-name").value.trim();
-          const replyText = replyForm.querySelector(".reply-text").value.trim();
+        const replyName = replyForm.querySelector(".reply-name").value.trim();
+        const replyText = replyForm.querySelector(".reply-text").value.trim();
 
-          if (!replyText) return;
+        if (!replyText) return;
 
-          const reply = document.createElement("div");
-          reply.classList.add("reply");
-          reply.innerHTML = `
+        const reply = document.createElement("div");
+        reply.classList.add("reply");
+        reply.innerHTML = `
             <strong>${replyName || "Anonymous"} replied:</strong>
             <p>${replyText}</p>
           `;
 
-          repliesContainer.appendChild(reply);
+        repliesContainer.appendChild(reply);
 
-          replyForm.remove();
-        });
+        replyForm.remove();
       });
     });
   });
+});
 
-    const text = "Thank you for contacting us!";
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("thanks-text").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 70);
-      }
-    }
-    typeWriter();
-
-
-  
-
-
-//  .then(res => res.json()
-//  ).then(data => {
-//   document.getElementById("announcement").innerText = data[0].message;
-//  });
-
+const text = "Thank you for contacting us!";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("thanks-text").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 70);
+  }
+}
+typeWriter();
