@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Exam Section</title>
+    <title>Klasync - Exams</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -10,6 +10,51 @@
       href="./images/icons8-star-filled-96.png"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Extra styles for the exams page */
+      .exam-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px;
+      }
+
+      .next-exam {
+        flex: 1 1 300px;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      }
+
+      table.exam-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table.exam-table th,
+      table.exam-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+
+      table.exam-table th {
+        background-color: #f4f4f4;
+      }
+
+      .next-exam-row {
+        background-color: #fff9c4 !important;
+        font-weight: bold;
+      }
+
+      #countdown {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #d32f2f;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -18,18 +63,18 @@
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#semester">Semesters</a></li>
+        <li><a href="announcement.html">Announcement</a></li>
+
         <li><a href="subjects.html">Subjects</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="resources.html">Resources</a></li>
         <li><a href="assignments.html">Assignments</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="exams.html">Exams</a></li>
+        <li><a href="exams.html" class="active">Exams</a></li>
         <li><a href="help.html">Help</a></li>
         <li><a href="about.html">About</a></li>
-
+        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <!-- <li><a href="#">Announcements</a></li> -->
-        <li><a href="login.html">Login</a></li>
       </ul>
     </nav>
 
@@ -37,83 +82,56 @@
 
     <div class="heading-exams">
       <h1 class="heading">Exams</h1>
-      <img src="./images/icons8-clock-48.png" alt="" />
-      <!-- <p>Here you can find information about upcoming exams, and schedules.</p> -->
+      <img src="./images/icons8-clock-48.png" alt="Clock icon" />
     </div>
 
     <div id="clock"></div>
 
-    <div class="exam-container">
-      <div class="next-exam">
-        <h2>Upcoming Exams</h2>
-        <p>Total Exams: 2</p>
-        <p>Next Exam: Midterm Exam</p>
-      </div>
+<div class="exam-container">
+  <div class="next-exam">
+    <h2>Upcoming Exams</h2>
+    <div class="upcoming-exams"></div>
+  </div>
 
-      <div class="next-exam">
-        <h2>Next Exam</h2>
-        <p>Midterm Exam</p>
-        <p>Date: March 15, 2023</p>
-        <p>Time: 10:00 AM - 12:00 PM</p>
-        <p>Location: Room 101</p>
-      </div>
-    </div>
+  <div class="next-exam">
+    <h2>Next Exam</h2>
+    <div class="next-exam-details"></div>
+  </div>
+</div>
 
-    <div class="exam-table">
-      <table border="1" cellpadding="10" cellspacing="0">
-        <thead>
-          <tr>
-            <th>Sr. No.</th>
-            <th>Subject</th>
-            <th>Date</th>
-            <th>Day</th>
-            <th>Time</th>
-            <th>Room No.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Operating Systems</td>
-            <td>01-Aug-2025</td>
-            <td>Friday</td>
-            <td>09:00 AM – 12:00 PM</td>
-            <td>Room 101</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Web Development</td>
-            <td>03-Aug-2025</td>
-            <td>Sunday</td>
-            <td>09:00 AM – 12:00 PM</td>
-            <td>Room 102</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Computer Networks</td>
-            <td>05-Aug-2025</td>
-            <td>Tuesday</td>
-            <td>09:00 AM – 12:00 PM</td>
-            <td>Room 103</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Database Systems</td>
-            <td>07-Aug-2025</td>
-            <td>Thursday</td>
-            <td>09:00 AM – 12:00 PM</td>
-            <td>Room 104</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<!-- Table for exam timetable -->
+<table class="exam-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Subject</th>
+      <th>Date</th>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Room</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
 
     <footer class="footer">
-      <p>&copy; 2025 Klasync. All rights reserved.</p>
-      <p>
-        This site is managed by <strong>Mariam Sawera</strong> from
-        <strong>Batch 2k23 – IT, University of Sindh</strong>.
-      </p>
+      <div class="footer-content">
+        <p>&copy; 2025 <strong>Klasync</strong>. All rights reserved.</p>
+        <p>
+          Managed by <strong>Mariam Sawera</strong> — Batch 2k23 IT, University
+          of Sindh
+        </p>
+        <a href="https://www.flaticon.com/" title="icons"
+          >All icons from - Flaticon</a
+        >
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>

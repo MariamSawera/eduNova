@@ -129,73 +129,73 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //help page.
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("questionForm");
-  const nameInput = document.getElementById("userName");
-  const questionInput = document.getElementById("userQuestion");
-  const discussionArea = document.getElementById("discussionArea");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const form = document.getElementById("questionForm");
+//   const nameInput = document.getElementById("userName");
+//   const questionInput = document.getElementById("userQuestion");
+//   const discussionArea = document.getElementById("discussionArea");
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+//   form.addEventListener("submit", function (event) {
+//     event.preventDefault();
 
-    const name = nameInput.value.trim();
-    const question = questionInput.value.trim();
+//     const name = nameInput.value.trim();
+//     const question = questionInput.value.trim();
 
-    if (!question) return;
+//     if (!question) return;
 
-    const post = document.createElement("div");
-    post.classList.add("question-post");
+//     const post = document.createElement("div");
+//     post.classList.add("question-post");
 
-    post.innerHTML = `
-        <strong>${name || "Anonymous"} asked:</strong>
-        <p>${question}</p>
-        <button class="reply-btn">Reply</button>
-        <div class="replies"></div>
-      `;
+//     post.innerHTML = `
+//         <strong>${name || "Anonymous"} asked:</strong>
+//         <p>${question}</p>
+//         <button class="reply-btn">Reply</button>
+//         <div class="replies"></div>
+//       `;
 
-    discussionArea.prepend(post);
+//     discussionArea.prepend(post);
 
-    nameInput.value = "";
-    questionInput.value = "";
+//     nameInput.value = "";
+//     questionInput.value = "";
 
-    const replyBtn = post.querySelector(".reply-btn");
-    const repliesContainer = post.querySelector(".replies");
+//     const replyBtn = post.querySelector(".reply-btn");
+//     const repliesContainer = post.querySelector(".replies");
 
-    replyBtn.addEventListener("click", function () {
-      if (post.querySelector(".reply-form")) return;
+//     replyBtn.addEventListener("click", function () {
+//       if (post.querySelector(".reply-form")) return;
 
-      const replyForm = document.createElement("form");
-      replyForm.classList.add("reply-form");
-      replyForm.innerHTML = `
-          <input type="text" class="reply-name" placeholder="Your Name (optional)" />
-          <textarea class="reply-text" rows="2" placeholder="Your reply..." required></textarea>
-          <button type="submit">Post Reply</button>
-        `;
+//       const replyForm = document.createElement("form");
+//       replyForm.classList.add("reply-form");
+//       replyForm.innerHTML = `
+//           <input type="text" class="reply-name" placeholder="Your Name (optional)" />
+//           <textarea class="reply-text" rows="2" placeholder="Your reply..." required></textarea>
+//           <button type="submit">Post Reply</button>
+//         `;
 
-      repliesContainer.before(replyForm);
+//       repliesContainer.before(replyForm);
 
-      replyForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+//       replyForm.addEventListener("submit", function (e) {
+//         e.preventDefault();
 
-        const replyName = replyForm.querySelector(".reply-name").value.trim();
-        const replyText = replyForm.querySelector(".reply-text").value.trim();
+//         const replyName = replyForm.querySelector(".reply-name").value.trim();
+//         const replyText = replyForm.querySelector(".reply-text").value.trim();
 
-        if (!replyText) return;
+//         if (!replyText) return;
 
-        const reply = document.createElement("div");
-        reply.classList.add("reply");
-        reply.innerHTML = `
-            <strong>${replyName || "Anonymous"} replied:</strong>
-            <p>${replyText}</p>
-          `;
+//         const reply = document.createElement("div");
+//         reply.classList.add("reply");
+//         reply.innerHTML = `
+//             <strong>${replyName || "Anonymous"} replied:</strong>
+//             <p>${replyText}</p>
+//           `;
 
-        repliesContainer.appendChild(reply);
+//         repliesContainer.appendChild(reply);
 
-        replyForm.remove();
-      });
-    });
-  });
-});
+//         replyForm.remove();
+//       });
+//     });
+//   });
+// });
 
 const text = "Thank you for contacting us!";
 let i = 0;

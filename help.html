@@ -11,7 +11,7 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
-    <title>Help & Discussion</title>
+    <title>Klasync-Help & Discussion</title>
   </head>
   <body>
     <nav>
@@ -20,17 +20,19 @@
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#semester">Semesters</a></li>
+        <li><a href="announcement.html">Announcement</a></li>
+
         <li><a href="subjects.html">Subjects</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="resources.html">Resources</a></li>
         <li><a href="assignments.html">Assignments</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="exams.html">Exams</a></li>
-        <li><a href="help.html">Help</a></li>
+        <li><a href="help.html" class="active">Help</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>       
         <li><a href="contact.html">Contact</a></li>
-        <!-- <li><a href="#">Announcements</a></li> -->
-        <li><a href="login.html">Login</a></li>
+        <!-- <li><a href="login.html">Login</a></li> -->
       </ul>
     </nav>
 
@@ -43,28 +45,167 @@
     Feel free to ask questions, share your doubts, or seek guidance, we're here to support you.
       </p>
     </div>
-    <div class="discussion-box">
-      <form id="questionForm">
-        <input type="text" id="userName" placeholder="Your Name (optional)" />
-        <textarea
-          id="userQuestion"
-          rows="3"
-          placeholder="Type your question..."
-          required
-        ></textarea>
-        <button class="help-button" type="submit">Post Question</button>
-      </form>
+<div class="discussion-box">
+  <form id="questionForm">
+    <input type="text" id="userName" placeholder="Your Name (optional)" />
+    <textarea
+      id="userQuestion"
+      rows="3"
+      placeholder="Type your question..."
+      required
+    ></textarea>
+    <button class="help-button" type="submit">Post Question</button>
+  </form>
 
-      <div id="discussionArea"></div>
-    </div>
+  <div id="discussionArea"></div>
+</div>
 
     <footer class="footer">
-      <p>&copy; 2025 Klasync. All rights reserved.</p>
-      <p>
-        This site is managed by <strong>Mariam Sawera</strong> from
-        <strong>Batch 2k23 – IT, University of Sindh</strong>.
-      </p>
-    </footer>
+  <div class="footer-content">
+    <p>&copy; 2025 <strong>Klasync</strong>. All rights reserved.</p>
+    <p>
+      Managed by <strong>Mariam Sawera</strong> — Batch 2k23 IT, University of Sindh
+    </p>
+    <a href="https://www.flaticon.com/" title="icons">All icons from - Flaticon</a>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
     <script src="script.js"></script>
+<script type="module">
+  // Firebase imports
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp,
+    onSnapshot,
+    query,
+    orderBy
+  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyAimgzLLLpv6t-d7pX2cOESO0nZWeyrUIM",
+    authDomain: "studenthub-98003.firebaseapp.com",
+    projectId: "studenthub-98003",
+    storageBucket: "studenthub-98003.firebasestorage.app",
+    messagingSenderId: "881188750242",
+    appId: "1:881188750242:web:8f5037df0d41e89aec28fb",
+    measurementId: "G-VR64EWLZGM"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  // DOM Elements
+  const form = document.getElementById("questionForm");
+  const nameInput = document.getElementById("userName");
+  const questionInput = document.getElementById("userQuestion");
+  const discussionArea = document.getElementById("discussionArea");
+
+  // Submit Question
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const name = nameInput.value.trim();
+    const question = questionInput.value.trim();
+    if (!question) return;
+
+    await addDoc(collection(db, "questions"), {
+      name: name || "Anonymous",
+      text: question,
+      timestamp: serverTimestamp()
+    });
+
+    nameInput.value = "";
+    questionInput.value = "";
+  });
+
+  // Load questions in real time
+  const q = query(collection(db, "questions"), orderBy("timestamp", "desc"));
+  onSnapshot(q, (snapshot) => {
+    discussionArea.innerHTML = ""; // Clear old
+    snapshot.forEach((docSnap) => {
+      const questionData = docSnap.data();
+      const post = document.createElement("div");
+      post.classList.add("question-post");
+
+      post.innerHTML = `
+        <strong>${questionData.name}</strong> asked:
+        <p>${questionData.text}</p>
+        <button class="reply-btn">Reply</button>
+        <div class="replies"></div>
+      `;
+
+      const repliesContainer = post.querySelector(".replies");
+      loadReplies(docSnap.id, repliesContainer);
+
+      // Reply button
+      const replyBtn = post.querySelector(".reply-btn");
+      replyBtn.addEventListener("click", () => {
+        if (post.querySelector(".reply-form")) return;
+
+        const replyForm = document.createElement("form");
+        replyForm.classList.add("reply-form");
+        replyForm.innerHTML = `
+          <input type="text" class="reply-name" placeholder="Your Name (optional)" />
+          <textarea class="reply-text" rows="2" placeholder="Your reply..." required></textarea>
+          <button type="submit">Post Reply</button>
+        `;
+
+        repliesContainer.before(replyForm);
+
+        replyForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const replyName = replyForm.querySelector(".reply-name").value.trim();
+          const replyText = replyForm.querySelector(".reply-text").value.trim();
+          if (!replyText) return;
+
+          await addDoc(collection(db, `questions/${docSnap.id}/replies`), {
+            name: replyName || "Anonymous",
+            text: replyText,
+            timestamp: serverTimestamp()
+          });
+
+          replyForm.remove();
+        });
+      });
+
+      discussionArea.appendChild(post);
+    });
+  });
+
+  // Load replies in real time
+  function loadReplies(questionId, container) {
+    const repliesQuery = query(
+      collection(db, `questions/${questionId}/replies`),
+      orderBy("timestamp", "asc")
+    );
+    onSnapshot(repliesQuery, (replySnap) => {
+      container.innerHTML = "";
+      replySnap.forEach((replyDoc) => {
+        const replyData = replyDoc.data();
+        const reply = document.createElement("div");
+        reply.classList.add("reply");
+        reply.innerHTML = `
+          <strong>${replyData.name}</strong> replied:
+          <p>${replyData.text}</p>
+        `;
+        container.appendChild(reply);
+      });
+    });
+  }
+</script>
+
   </body>
 </html>

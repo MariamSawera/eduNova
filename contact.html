@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Contact</title>
+    <title>Klasync-Contact</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -19,6 +19,8 @@
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#semester">Semesters</a></li>
+        <li><a href="announcement.html">Announcement</a></li>
+
         <li><a href="subjects.html">Subjects</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="resources.html">Resources</a></li>
@@ -27,8 +29,9 @@
         <li><a href="exams.html">Exams</a></li>
         <li><a href="help.html">Help</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <!-- <li><a href="login.html">Login</a></li> -->
       </ul>
     </nav>
 
@@ -45,40 +48,42 @@
         </p>
         <p>We’d love to hear from you!</p>
 
-        <form
-          action="https://formsubmit.co/sindhuniversity2k23@gmail.com"
-          method="POST"
-        >
-          <label for="name">Your Name</label><br />
-          <input type="text" id="name" name="name" required /><br /><br />
+<form
+  action="https://formspree.io/f/mldlzqpr"
+  method="POST"
+>
+  <label for="name">Your Name</label><br />
+  <input type="text" id="name" name="name" required /><br /><br />
 
-          <label for="email">Your Email</label><br />
-          <input type="email" id="email" name="email" required /><br /><br />
+  <label for="email">Your Email</label><br />
+  <input type="email" id="email" name="email" required /><br /><br />
 
-          <label for="message">Your Message</label><br />
-          <textarea id="message" name="message" rows="5" required></textarea
-          ><br /><br />
+  <label for="message">Your Message</label><br />
+  <textarea id="message" name="message" rows="5" required></textarea><br /><br />
 
-          <div class="button-wrapper">
-            <button type="submit">Send</button>
-          </div>
-          <input
-            type="hidden"
-            name="_next"
-            value="https://mariamsawera.github.io/Klasync/thankyou.html"
-          />
-        </form>
+  <button type="submit">Send</button>
+
+  <input type="hidden" name="_next" value="https://studenthub-98003.web.app/thankyou.html" />
+</form>
       </section>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2025 Klasync. All rights reserved.</p>
-      <p>
-        This site is managed by <strong>Mariam Sawera</strong> from
-        <strong>Batch 2k23 – IT, University of Sindh</strong>.
-      </p>
-    </footer>
+  <div class="footer-content">
+    <p>&copy; 2025 <strong>Klasync</strong>. All rights reserved.</p>
+    <p>
+      Managed by <strong>Mariam Sawera</strong> — Batch 2k23 IT, University of Sindh
+    </p>
+    <a href="https://www.flaticon.com/" title="icons">All icons from - Flaticon</a>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
     <script src="script.js"></script>
   </body>
 </html>
