@@ -28,8 +28,8 @@ nav {
   z-index: 1000;
 
   /* Glowing bottom border */
-  border-bottom: 3px solid rgba(0, 131, 239, 0.8);
-  box-shadow: 0 4px 12px rgba(4, 211, 247, 0.5);
+  /* border-bottom: 3px solid rgba(0, 131, 239, 0.8);
+  box-shadow: 0 4px 12px rgba(4, 211, 247, 0.5); */
 }
 
 /* Logo styling */
@@ -140,6 +140,20 @@ nav ul li a.active::after {
     width: 100%;
   }
 }
+
+/* zoomout */
+
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
 
 /* Fade-in animation for mobile menu */
 @keyframes fadeIn {
