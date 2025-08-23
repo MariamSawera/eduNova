@@ -10,9 +10,11 @@ html {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;   /* was height: 100% */
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
+
 }
 
 /* Navbar container */
@@ -53,6 +55,11 @@ nav ul {
 nav ul li {
   display: inline;
 }
+
+body.no-scroll {
+  overflow: hidden;
+}
+
 
 nav ul li a {
   color: white;
@@ -100,6 +107,13 @@ nav ul li a.active::after {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+
+    #nav-links {
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
   nav {
     flex-wrap: wrap;
   }

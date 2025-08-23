@@ -55,12 +55,30 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(updateClock, 1000);
   updateClock();
 
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
 
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+  // menu-toggle
+  // const toggle = document.getElementById("menu-toggle");
+  // const navLinks = document.getElementById("nav-links");
+
+  // toggle.addEventListener("click", () => {
+  //   navLinks.classList.toggle("active");
+  // });
+  const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  document.body.classList.toggle("no-scroll"); 
+});
+
+//  close menu when a link is clicked
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    document.body.classList.remove("no-scroll");
   });
+});
+
 });
 
 //assignment page (assignment mark complete and sort function)
