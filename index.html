@@ -192,11 +192,11 @@
 
         let greet;
         if (pkHour >= 5 && pkHour < 12) {
-          greet = "Good morning ☕";
+          greet = "Good Morning ☕";
         } else if (pkHour >= 12 && pkHour < 18) {
-          greet = "Good afternoon ☀️";
+          greet = "Good Afternoon ☀️";
         } else if (pkHour >= 18 && pkHour < 21) {
-          greet = "Good evening ✨";
+          greet = "Good Evening ✨";
         } else {
           greet = "Greetings! 🌙";
         }
@@ -214,7 +214,7 @@
             ? "You've completed all semesters – well done!"
             : `You're currently in Semester ${currentSemester}. Keep going! `;
 
-        const lines = [greet, "Welcome to Batch2k23 Class Portal!", semMessage];
+        const lines = [greet, "Welcome to IT Batch2k23 Class Portal!", semMessage];
 
         intro.innerHTML = lines.join("<br>"); 
 
