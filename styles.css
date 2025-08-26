@@ -101,7 +101,6 @@ nav ul li a.active::after {
   color: white;
 }
 
-
 /* dropdwon */
 
 
@@ -1704,4 +1703,11 @@ button:hover {
   .announcementAll-card .icon {
     margin-bottom: 10px;
   }
+}
+
+@media screen and (max-width: 768px) {
+
+.padding{
+  padding:0 30px;
+}
 }
