@@ -684,7 +684,7 @@ a {
 }
 
 .resources a:hover {
-  background-color: #258088;
+  /* background-color: #258088; */
   color: white;
 }
 @media screen and (max-width: 1024px) {
