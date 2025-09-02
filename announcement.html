@@ -48,9 +48,12 @@
       <div class="footer-content">
         <p>&copy; 2025 <strong>23Connect</strong>. All rights reserved.</p>
         <p>
-          Managed by <strong>Mariam Sawera</strong> — Batch 2k23 IT, University of Sindh
+          Managed by <strong>Mariam Sawera</strong> — Batch 2k23 IT, University
+          of Sindh
         </p>
-        <a href="https://www.flaticon.com/" title="icons">All icons from - Flaticon</a>
+        <a href="https://www.flaticon.com/" title="icons"
+          >All icons from - Flaticon</a
+        >
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
@@ -62,16 +65,22 @@
 
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-      import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        query,
+        orderBy,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
       const firebaseConfig = {
         apiKey: "AIzaSyAimgzLLLpv6t-d7pX2cOESO0nZWeyrUIM",
         authDomain: "studenthub-98003.firebaseapp.com",
         projectId: "studenthub-98003",
-        storageBucket: "studenthub-98003.appspot.com", // FIXED
+        storageBucket: "studenthub-98003.appspot.com",
         messagingSenderId: "881188750242",
         appId: "1:881188750242:web:8f5037df0d41e89aec28fb",
-        measurementId: "G-VR64EWLZGM"
+        measurementId: "G-VR64EWLZGM",
       };
 
       const app = initializeApp(firebaseConfig);
@@ -82,7 +91,12 @@
         section.innerHTML = "<p>Loading announcements...</p>";
 
         try {
-          const snapshot = await getDocs(collection(db, "announcements"));
+          // 🔹 Order by DueDate (descending: newest first)
+          const q = query(
+            collection(db, "announcements"),
+            orderBy("DueDate", "desc")
+          );
+          const snapshot = await getDocs(q);
 
           if (snapshot.empty) {
             section.innerHTML = "<p>No announcements found.</p>";
@@ -90,25 +104,32 @@
           }
 
           section.innerHTML = "";
-          snapshot.forEach(doc => {
+          snapshot.forEach((doc) => {
             const data = doc.data();
             const due = data.DueDate
-              ? new Date(data.DueDate).toLocaleDateString()
+              ? data.DueDate.toDate().toLocaleDateString()
               : "No due date";
 
             const card = document.createElement("div");
             card.className = "announcementAll-card";
             card.innerHTML = `
-              <div class="icon">
-                <img src="${data.iconURL || 'https://cdn-icons-png.flaticon.com/512/2910/2910768.png'}" alt="icon">
-              </div>
-              <div class="content">
-                <h3>${data.Title || "Untitled"}</h3>
-                <p>${data.Description || "No description provided."}</p>
-                <p class="due-date">Due: ${due}</p>
-                ${data.link ? `<a href="${data.link}" target="_blank" class="announcementAll-link">View Details</a>` : ""}
-              </div>
-            `;
+          <div class="icon">
+            <img src="${
+              data.iconURL ||
+              "https://cdn-icons-png.flaticon.com/512/2910/2910768.png"
+            }" alt="icon">
+          </div>
+          <div class="content">
+            <h3>${data.Title || "Untitled"}</h3>
+            <p>${data.Description || "No description provided."}</p>
+            <p class="due-date">Due: ${due}</p>
+            ${
+              data.link
+                ? `<a href="${data.link}" target="_blank" class="announcementAll-link">View Details</a>`
+                : ""
+            }
+          </div>
+        `;
             section.appendChild(card);
           });
         } catch (error) {
