@@ -737,6 +737,7 @@ a {
   max-width: 800px;
 }
 
+
 .intro p {
   font-size: 1.5rem;
   color: #24344d;
@@ -1735,4 +1736,9 @@ button:hover {
 .padding{
   padding:0 30px;
 }
+}
+@media (max-width: 768px) {
+    .intro p  {
+      font-size: 1rem;
+    }
 }
