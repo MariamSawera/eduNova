@@ -17,7 +17,6 @@
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <!-- <li><a href="index.html#semester">Semesters</a></li> -->
         <li><a href="semester6.html">Semester</a></li>
         <li><a href="announcement.html" class="active">Announcement</a></li>
         <li><a href="subjects.html">Subjects</a></li>
@@ -91,7 +90,6 @@
         section.innerHTML = "<p>Loading announcements...</p>";
 
         try {
-          // 🔹 Order by DueDate (descending: newest first)
           const q = query(
             collection(db, "announcements"),
             orderBy("DueDate", "desc")
@@ -106,30 +104,42 @@
           section.innerHTML = "";
           snapshot.forEach((doc) => {
             const data = doc.data();
-            const due = data.DueDate
-              ? data.DueDate.toDate().toLocaleDateString()
+            const dueDate = data.DueDate ? data.DueDate.toDate() : null;
+            const today = new Date();
+
+            let statusText = "Ongoing";
+            let statusClass = "ongoing";
+
+            if (dueDate && dueDate < today) {
+              statusText = "Completed";
+              statusClass = "completed";
+            }
+
+            const due = dueDate
+              ? dueDate.toLocaleDateString()
               : "No due date";
 
             const card = document.createElement("div");
             card.className = "announcementAll-card";
             card.innerHTML = `
-          <div class="icon">
-            <img src="${
-              data.iconURL ||
-              "https://cdn-icons-png.flaticon.com/512/2910/2910768.png"
-            }" alt="icon">
-          </div>
-          <div class="content">
-            <h3>${data.Title || "Untitled"}</h3>
-            <p>${data.Description || "No description provided."}</p>
-            <p class="due-date">Due: ${due}</p>
-            ${
-              data.link
-                ? `<a href="${data.link}" target="_blank" class="announcementAll-link">View Details</a>`
-                : ""
-            }
-          </div>
-        `;
+              <div class="status ${statusClass}">${statusText}</div>
+              <div class="icon">
+                <img src="${
+                  data.iconURL ||
+                  "https://cdn-icons-png.flaticon.com/512/2910/2910768.png"
+                }" alt="icon">
+              </div>
+              <div class="content">
+                <h3>${data.Title || "Untitled"}</h3>
+                <p>${data.Description || "No description provided."}</p>
+                <p class="due-date">Due: ${due}</p>
+                ${
+                  data.link
+                    ? `<a href="${data.link}" target="_blank" class="announcementAll-link">View Details</a>`
+                    : ""
+                }
+              </div>
+            `;
             section.appendChild(card);
           });
         } catch (error) {
