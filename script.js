@@ -40,6 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
   //  Instructors Page
   setupSearch("searchBar", ".instructor-container .instructor-card");
 
+// gallery page
+    setupSearch("searchBar", ".project-container .project-card");
+
+
   assignmentSort();
 
   //exams page clock
