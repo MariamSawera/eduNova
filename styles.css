@@ -1215,11 +1215,11 @@ th {
 
 /* assignments.html */
 
-.assignment-container {
+/* .assignment-container {
   max-width: 70%;
   margin: 0 auto;
   padding: 20px;
-  background: #15475f;
+  background: #00796b;
   border-radius: 10px;
 }
 
@@ -1245,7 +1245,7 @@ th {
 }
 
 .assignment.completed {
-    background: linear-gradient(135deg, #e0f7fa, #fce4ec);  color: #666;
+    background: #ebe9e9;
 }
 
 .assignment .status {
@@ -1261,10 +1261,23 @@ th {
 }
 
 .assignment-link {
-  border: rgb(99, 94, 94);
-  background-color: #cedde7;
-  padding: 2px;
+  display: inline-block;
+  background-color: #00796b; 
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
 }
+
+
+
+.assignment-link:hover {
+    background-color: #2aafa0; 
+} */
+
 
 /* //events.html */
 .events-section {
