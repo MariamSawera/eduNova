@@ -95,9 +95,9 @@ function assignmentSort() {
     const deadline = new Date(deadlineStr);
 
     if (today > deadline) {
-      item.classList.add("completed");
+      item.classList.add("completed2");
 
-      const status = item.querySelector(".status");
+      const status = item.querySelector(".status2");
       if (status) {
         status.textContent = "completed";
       }
