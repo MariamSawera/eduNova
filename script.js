@@ -86,39 +86,39 @@ navLinks.querySelectorAll("a").forEach(link => {
 });
 
 //assignment page (assignment mark complete and sort function)
-function assignmentSort() {
-  const today = new Date();
-  const assignments = document.querySelectorAll(".assignment");
+// function assignmentSort() {
+//   const today = new Date();
+//   const assignments = document.querySelectorAll(".assignment");
 
-  assignments.forEach((item) => {
-    const deadlineStr = item.getAttribute("deadline-date");
-    const deadline = new Date(deadlineStr);
+//   assignments.forEach((item) => {
+//     const deadlineStr = item.getAttribute("deadline-date");
+//     const deadline = new Date(deadlineStr);
 
-    if (today > deadline) {
-      item.classList.add("completed2");
+//     if (today > deadline) {
+//       item.classList.add("completed2");
 
-      const status = item.querySelector(".status2");
-      if (status) {
-        status.textContent = "completed";
-      }
-    }
-  });
+//       const status = item.querySelector(".status2");
+//       if (status) {
+//         status.textContent = "completed";
+//       }
+//     }
+//   });
 
   //sorting
-  const assignmentList = document.querySelector(".assignment-list");
-  if (!assignmentList) return;
+//   const assignmentList = document.querySelector(".assignment-list");
+//   if (!assignmentList) return;
 
-  const assignmentItems = Array.from(assignmentList.children);
+//   const assignmentItems = Array.from(assignmentList.children);
 
-  assignmentItems.sort((firstItem, secondItem) => {
-    const firstIsCompleted = firstItem.classList.contains("completed");
-    const secondIsCompleted = secondItem.classList.contains("completed");
+//   assignmentItems.sort((firstItem, secondItem) => {
+//     const firstIsCompleted = firstItem.classList.contains("completed");
+//     const secondIsCompleted = secondItem.classList.contains("completed");
 
-    return firstIsCompleted - secondIsCompleted;
-  });
+//     return firstIsCompleted - secondIsCompleted;
+//   });
 
-  assignmentItems.forEach((item) => assignmentList.appendChild(item));
-}
+//   assignmentItems.forEach((item) => assignmentList.appendChild(item));
+// }
 // tracking semester
 document.addEventListener("DOMContentLoaded", function () {
   const card = document.getElementById("curr-semester");

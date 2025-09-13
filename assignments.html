@@ -18,7 +18,7 @@
     <style>
       /* Assignment Section */
       .assignment-section {
-        padding: 30px 20px;
+        /* padding: 30px 20px; */
       }
 
       .assignment-container {
@@ -27,7 +27,6 @@
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         border-radius: 20px;
-        /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
         overflow: hidden;
         padding: 30px;
       }
@@ -45,10 +44,10 @@
         margin: 0;
       }
 
-      /* Grid: 3 per row */
+      /* Grid layout */
       .assignment-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 24px;
         padding: 30px;
         margin: 0;
@@ -123,7 +122,6 @@
         font-size: 8px;
       }
 
-      /* Active → green */
       .status2.active2 {
         background: #d1fae5;
         color: #065f46;
@@ -133,7 +131,6 @@
         border-left: 4px solid #10b981;
       }
 
-      /* Completed → gray */
       .status2.completed2 {
         background: #e5e7eb;
         color: #374151;
@@ -157,7 +154,6 @@
         color: white;
       }
 
-      /* Active → green */
       .assignment.active2 .assignment-link {
         background: linear-gradient(135deg, #00796b, #26a69a);
         box-shadow: 0 4px 12px rgba(0, 121, 107, 0.3);
@@ -167,7 +163,6 @@
         box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
       }
 
-      /* Completed → gray */
       .assignment.completed2 .assignment-link {
         background: linear-gradient(135deg, #6c757d, #adb5bd);
         opacity: 0.85;
@@ -179,10 +174,43 @@
         box-shadow: 0 8px 20px rgba(108, 117, 125, 0.4);
       }
 
-      /* Responsive */
+      /* Responsive Layout */
+      @media (max-width: 1024px) {
+        .assignment-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       @media (max-width: 768px) {
         .assignment-list {
           grid-template-columns: 1fr;
+        }
+        .assignment-container {
+          padding: 0px;
+        }
+        .assignment-header {
+          padding: 25px;
+        }
+        .heading3 {
+          font-size: 22px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .assignment {
+          padding: 16px;
+        }
+        .detail-label,
+        .detail-value {
+          font-size: 13px;
+        }
+        .assignment-link {
+          padding: 8px 14px;
+          font-size: 13px;
+        }
+        .status2 {
+          font-size: 11px;
+          padding: 5px 12px;
         }
       }
     </style>
@@ -218,13 +246,9 @@
       </p>
     </div>
 
-    <!-- Assignment Section -->
     <section class="assignment-section" id="assignments">
       <div class="assignment-container">
-
         <ul class="assignment-list">
-          <!-- Example Assignment 1 -->
-           
           <li class="assignment" deadline-date="2025-08-8">
             <div class="subject-info">
               <p><strong>Subject:</strong> Web Technologies</p>
@@ -237,56 +261,32 @@
                 <span class="detail-value">Website 20-pages</span>
               </div>
               <div class="detail-item">
-  <span class="detail-label">Given On:</span>
-  <span class="detail-value">1 July 2025</span>
-</div>
+                <span class="detail-label">Given On:</span>
+                <span class="detail-value">1 July 2025</span>
+              </div>
               <div class="detail-item">
                 <span class="detail-label">Deadline:</span>
-                <span class="detail-value">Friday,8 Aug 2025</span>
+                <span class="detail-value">Friday, 8 Aug 2025</span>
               </div>
-
-                           <div class="detail-item">
+              <div class="detail-item">
                 <span class="detail-label">Submission:</span>
                 <span class="detail-value">Google Classroom</span>
               </div>
-
-                           <div class="detail-item">
+              <div class="detail-item">
                 <span class="detail-label">Marks:</span>
                 <span class="detail-value">10%</span>
               </div>
-
             </div>
             <div class="assignment-actions">
-              <a class="assignment-link" href="https://drive.google.com/file/d/1BaEyvX7EBdJW_qyX2QuMnCyeBbF6q5iJ/view?usp=drive_link" target="_blank">📄 View PDF</a>
+              <a
+                class="assignment-link"
+                href="https://drive.google.com/file/d/1BaEyvX7EBdJW_qyX2QuMnCyeBbF6q5iJ/view?usp=drive_link"
+                target="_blank"
+                >📄 View PDF</a
+              >
               <span class="status2">Active</span>
             </div>
           </li>
-
-          <!-- Example Assignment 2 -->
-          <!-- <li class="assignment" deadline-date="2025-08-10">
-            <div class="subject-info">
-              <p><strong>Subject:</strong> Database Systems</p>
-              <p><strong>Instructor:</strong> Dr. Ali</p>
-              <p><strong>Semester:</strong> 5th</p>
-            </div>
-            <div class="assignment-details">
-              <div class="detail-item">
-                <span class="detail-label">Title:</span>
-                <span class="detail-value">ERD Design</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">Deadline:</span>
-                <span class="detail-value">10 Aug 2025</span>
-              </div>
-            </div>
-            <div class="assignment-actions">
-              <a class="assignment-link" href="#" target="_blank">📄 View PDF</a>
-              <span class="status2">Active</span>
-            </div>
-          </li> -->
-
-          <!-- Example Assignment 3 -->
-        
         </ul>
       </div>
     </section>
@@ -334,7 +334,6 @@
           }
         });
 
-        // sort: Active first (by nearest deadline), Completed last
         const assignmentList = document.querySelector(".assignment-list");
         if (!assignmentList) return;
 
@@ -346,10 +345,10 @@
           const aCompleted = a.classList.contains("completed2");
           const bCompleted = b.classList.contains("completed2");
 
-          if (aCompleted && !bCompleted) return 1; // completed goes last
-          if (!aCompleted && bCompleted) return -1; // active goes first
+          if (aCompleted && !bCompleted) return 1;
+          if (!aCompleted && bCompleted) return -1;
 
-          return bDeadline - aDeadline; // newest first
+          return bDeadline - aDeadline;
         });
 
         assignmentItems.forEach((item) => assignmentList.appendChild(item));
