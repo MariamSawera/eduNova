@@ -1,7 +1,6 @@
 body {
   font-family: sans-serif;
   background-color: white;
-      /* background: linear-gradient(135deg, #e0f7fa, #fce4ec); */
 
 }
 html {
@@ -10,11 +9,15 @@ html {
 
 html,
 body {
-  min-height: 100%;   /* was height: 100% */
+  min-height: 100%;   
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  overflow-x: hidden;
 
+}
+
+body {
+  padding-top: 70px;
 }
 
 /* Navbar container */
@@ -25,13 +28,17 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
 
-  /* Glowing bottom border */
-  /* border-bottom: 3px solid rgba(0, 131, 239, 0.8);
-  box-shadow: 0 4px 12px rgba(4, 211, 247, 0.5); */
+  left: 0;          /* anchor navbar to left edge */
+  right: 0;         /* anchor navbar to right edge */
+  width: 100%;      /* full width */
+  box-sizing: border-box; /* include padding inside width */
+
+  
+  
 }
 
 /* Logo styling */

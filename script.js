@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setupSearch("searchBar", ".project-container .project-card");
 
 
-  assignmentSort();
+  // assignmentSort();
 
   //exams page clock
   function updateClock() {
