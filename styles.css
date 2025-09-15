@@ -17,7 +17,7 @@ body {
 }
 
 body {
-  padding-top: 70px;
+  padding-top: 80px;
 }
 
 /* Navbar container */
@@ -1781,4 +1781,169 @@ button:hover {
     .intro p  {
       font-size: 1rem;
     }
+}
+
+
+/* ===== Modal Overlay ===== */
+/* ===== Modal Overlay ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 15px; /* ensures spacing from edges on mobile */
+  box-sizing: border-box;
+}
+
+/* ===== Modal Box ===== */
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s ease;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin: auto; /* ensures centering */
+}
+
+/* ===== Close Button (Top Right) ===== */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;   /* bigger for mobile */
+  line-height: 1;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s;
+}
+
+.modal-close:hover {
+  color: #111;
+  transform: scale(1.1);
+}
+
+/* ===== Title & Content ===== */
+.modal-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.modal-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.modal-body li {
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #444;
+  transition: background 0.2s ease;
+}
+
+.modal-body li:hover {
+  background: #f1f1f1;
+}
+
+/* ===== Buttons ===== */
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  min-width: 120px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #111;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+
+/* ===== Animations ===== */
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Responsive Fixes ===== */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px;
+    max-width: 90%;   /* leaves space from sides */
+  }
+  .modal-title {
+    font-size: 1.2rem;
+  }
+  .modal-close {
+    font-size: 1.6rem; /* scale down slightly */
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 18px;
+    border-radius: 12px;
+    max-width: 95%;   /* extra space on smallest screens */
+  }
+  .modal-title {
+    font-size: 1.1rem;
+  }
+  .btn {
+    flex: 1; /* stack full-width buttons */
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .modal-close {
+    font-size: 1.5rem; /* readable but not oversized */
+  }
 }

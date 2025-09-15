@@ -18,6 +18,67 @@ document.addEventListener("DOMContentLoaded", function () {
   //   });
   // }
 
+  const url =
+    "https://opensheet.elk.sh/1TagnEqQ8JUZLzcBMFUgmLDw1XEQ5E1M8pZ_BKB2yiCo/Sheet1";
+  const announcementDiv = document.getElementById("announcement");
+  const announcementPopup = document.getElementById("announcementPopup");
+  const modal = document.getElementById("announcementModal");
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.length) {
+        // Sidebar list
+        const ul1 = document.createElement("ul");
+        data.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item.message || "(no message)";
+          ul1.appendChild(li);
+        });
+        announcementDiv.innerHTML = "";
+        announcementDiv.appendChild(ul1);
+
+        // Popup list
+        const ul2 = document.createElement("ul");
+        data.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item.message || "(no message)";
+          ul2.appendChild(li);
+        });
+        announcementPopup.innerHTML = "";
+        announcementPopup.appendChild(ul2);
+
+        // Show popup only once per session
+        if (!sessionStorage.getItem("announcementShown")) {
+          modal.style.display = "flex";
+          sessionStorage.setItem("announcementShown", "true");
+        }
+      } else {
+        announcementDiv.innerText = "No announcements right now.";
+        announcementPopup.innerText = "No announcements right now.";
+      }
+    });
+
+  // Close button
+  document
+    .getElementById("closeAnnouncement")
+    .addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+  // Don’t show again (this session)
+  document
+    .getElementById("dontShowToday")
+    .addEventListener("click", () => {
+      sessionStorage.setItem("announcementShown", "true");
+      modal.style.display = "none";
+    });
+
+    document.getElementById("closeAnnouncementX").addEventListener("click", () => {
+  document.getElementById("announcementModal").style.display = "none";
+});
+
+
   function setupSearch(inputId, cardSelectors) {
     const searchBar = document.getElementById(inputId);
 
@@ -229,3 +290,5 @@ function typeWriter() {
   }
 }
 typeWriter();
+
+
