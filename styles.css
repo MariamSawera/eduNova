@@ -115,9 +115,11 @@ nav ul li a.active::after {
 @media (max-width: 768px) {
 
     #nav-links {
-    max-height: 100vh;
+    max-height: calc(100vh - 80px); /* account for fixed navbar height */
     overflow-y: auto;
     overflow-x: hidden;
+        padding-bottom: 1rem; /* extra space so last item isn’t cut off */
+
   }
 
   nav {

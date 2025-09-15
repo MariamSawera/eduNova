@@ -1,87 +1,85 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // const searchBar = document.getElementById("searchBar"); //searchbar on books page
-
-  // if (searchBar) {
-  //   searchBar.addEventListener("keyup", function () {
-  //     const input = searchBar.value.toLowerCase();
-  //     const books = document.querySelectorAll(".book-container .book-card");
-
-  //     books.forEach(function (book) {
-  //       const text = book.textContent.toLowerCase();
-
-  //       if (text.includes(input)) {
-  //         book.style.display = "";
-  //       } else {
-  //         book.style.display = "none";
-  //       }
-  //     });
-  //   });
-  // }
-
+  // ==============================
+  // ANNOUNCEMENTS
+  // ==============================
   const url =
     "https://opensheet.elk.sh/1TagnEqQ8JUZLzcBMFUgmLDw1XEQ5E1M8pZ_BKB2yiCo/Sheet1";
+
   const announcementDiv = document.getElementById("announcement");
   const announcementPopup = document.getElementById("announcementPopup");
   const modal = document.getElementById("announcementModal");
 
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.length) {
-        // Sidebar list
-        const ul1 = document.createElement("ul");
-        data.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = item.message || "(no message)";
-          ul1.appendChild(li);
-        });
-        announcementDiv.innerHTML = "";
-        announcementDiv.appendChild(ul1);
+  if (announcementDiv || announcementPopup) {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length) {
+          // Sidebar list
+          if (announcementDiv) {
+            const ul1 = document.createElement("ul");
+            data.forEach((item) => {
+              const li = document.createElement("li");
+              li.textContent = item.message || "(no message)";
+              ul1.appendChild(li);
+            });
+            announcementDiv.innerHTML = "";
+            announcementDiv.appendChild(ul1);
+          }
 
-        // Popup list
-        const ul2 = document.createElement("ul");
-        data.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = item.message || "(no message)";
-          ul2.appendChild(li);
-        });
-        announcementPopup.innerHTML = "";
-        announcementPopup.appendChild(ul2);
+          // Popup list
+          if (announcementPopup) {
+            const ul2 = document.createElement("ul");
+            data.forEach((item) => {
+              const li = document.createElement("li");
+              li.textContent = item.message || "(no message)";
+              ul2.appendChild(li);
+            });
+            announcementPopup.innerHTML = "";
+            announcementPopup.appendChild(ul2);
+          }
 
-        // Show popup only once per session
-        if (!sessionStorage.getItem("announcementShown")) {
-          modal.style.display = "flex";
-          sessionStorage.setItem("announcementShown", "true");
+          // Show popup only once per session
+          if (modal && !sessionStorage.getItem("announcementShown")) {
+            modal.style.display = "flex";
+            sessionStorage.setItem("announcementShown", "true");
+          }
+        } else {
+          if (announcementDiv)
+            announcementDiv.innerText = "No announcements right now.";
+          if (announcementPopup)
+            announcementPopup.innerText = "No announcements right now.";
         }
-      } else {
-        announcementDiv.innerText = "No announcements right now.";
-        announcementPopup.innerText = "No announcements right now.";
-      }
-    });
+      });
+  }
 
-  // Close button
-  document
-    .getElementById("closeAnnouncement")
-    .addEventListener("click", () => {
+  // Close popup buttons
+  const closeBtn = document.getElementById("closeAnnouncement");
+  if (closeBtn && modal) {
+    closeBtn.addEventListener("click", () => {
       modal.style.display = "none";
     });
+  }
 
-  // Don’t show again (this session)
-  document
-    .getElementById("dontShowToday")
-    .addEventListener("click", () => {
+  const dontShowBtn = document.getElementById("dontShowToday");
+  if (dontShowBtn && modal) {
+    dontShowBtn.addEventListener("click", () => {
       sessionStorage.setItem("announcementShown", "true");
       modal.style.display = "none";
     });
+  }
 
-    document.getElementById("closeAnnouncementX").addEventListener("click", () => {
-  document.getElementById("announcementModal").style.display = "none";
-});
+  const closeX = document.getElementById("closeAnnouncementX");
+  if (closeX && modal) {
+    closeX.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
 
-
+  // ==============================
+  // SEARCH BARS (books, instructors, gallery)
+  // ==============================
   function setupSearch(inputId, cardSelectors) {
     const searchBar = document.getElementById(inputId);
-
     if (!searchBar) return;
 
     searchBar.addEventListener("keyup", function () {
@@ -95,19 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Books Page
   setupSearch("searchBar", ".book-container .book-card");
-
-  //  Instructors Page
   setupSearch("searchBar", ".instructor-container .instructor-card");
+  setupSearch("searchBar", ".project-container .project-card");
 
-// gallery page
-    setupSearch("searchBar", ".project-container .project-card");
-
-
-  // assignmentSort();
-
-  //exams page clock
+  // ==============================
+  // CLOCK (exams page)
+  // ==============================
   function updateClock() {
     const now = new Date();
     const time = now.toLocaleTimeString();
@@ -116,179 +108,81 @@ document.addEventListener("DOMContentLoaded", function () {
       clock.textContent = "Current Time: " + time;
     }
   }
-
   setInterval(updateClock, 1000);
   updateClock();
 
-
-  // menu-toggle
-  // const toggle = document.getElementById("menu-toggle");
-  // const navLinks = document.getElementById("nav-links");
-
-  // toggle.addEventListener("click", () => {
-  //   navLinks.classList.toggle("active");
-  // });
+  // ==============================
+  // NAV MENU TOGGLE
+  // ==============================
   const toggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+  const navLinks = document.getElementById("nav-links");
 
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  document.body.classList.toggle("no-scroll"); 
-});
+  if (toggle && navLinks) {
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
 
-//  close menu when a link is clicked
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-  });
-});
+    // close menu when a link is clicked
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        document.body.classList.remove("no-scroll");
+      });
+    });
+  }
 
-});
-
-//assignment page (assignment mark complete and sort function)
-// function assignmentSort() {
-//   const today = new Date();
-//   const assignments = document.querySelectorAll(".assignment");
-
-//   assignments.forEach((item) => {
-//     const deadlineStr = item.getAttribute("deadline-date");
-//     const deadline = new Date(deadlineStr);
-
-//     if (today > deadline) {
-//       item.classList.add("completed2");
-
-//       const status = item.querySelector(".status2");
-//       if (status) {
-//         status.textContent = "completed";
-//       }
-//     }
-//   });
-
-  //sorting
-//   const assignmentList = document.querySelector(".assignment-list");
-//   if (!assignmentList) return;
-
-//   const assignmentItems = Array.from(assignmentList.children);
-
-//   assignmentItems.sort((firstItem, secondItem) => {
-//     const firstIsCompleted = firstItem.classList.contains("completed");
-//     const secondIsCompleted = secondItem.classList.contains("completed");
-
-//     return firstIsCompleted - secondIsCompleted;
-//   });
-
-//   assignmentItems.forEach((item) => assignmentList.appendChild(item));
-// }
-// tracking semester
-document.addEventListener("DOMContentLoaded", function () {
+  // ==============================
+  // SEMESTER TRACKER
+  // ==============================
   const card = document.getElementById("curr-semester");
-  const anchor = card.querySelector("a");
-  const img = card.querySelector("img");
-  const text = card.querySelector("p");
+  if (card) {
+    const anchor = card.querySelector("a");
+    const img = card.querySelector("img");
+    const text = card.querySelector("p");
+    const heading = card.querySelector("h2");
 
-  const startDate = new Date("2025-08-01");
-  const now = new Date();
+    const startDate = new Date("2025-08-01");
+    const now = new Date();
 
-  const diffInMonths =
-    (now.getFullYear() - startDate.getFullYear()) * 12 +
-    (now.getMonth() - startDate.getMonth());
+    const diffInMonths =
+      (now.getFullYear() - startDate.getFullYear()) * 12 +
+      (now.getMonth() - startDate.getMonth());
 
-  const currentSemester = Math.floor(diffInMonths / 6) + 6;
+    const currentSemester = Math.floor(diffInMonths / 6) + 6;
 
-  if (currentSemester > 8) {
-    anchor.style.display = "none";
-    img.src = "images/well-done.png";
-    img.alt = "Well Done";
-    text.textContent = "🎉 Degree Completed";
-    heading.textContent = "Congratulations!";
-    return;
+    if (currentSemester > 8) {
+      if (anchor) anchor.style.display = "none";
+      if (img) {
+        img.src = "images/well-done.png";
+        img.alt = "Well Done";
+      }
+      if (text) text.textContent = "🎉 Degree Completed";
+      if (heading) heading.textContent = "Congratulations!";
+    } else {
+      if (anchor) anchor.href = `semester${currentSemester}.html`;
+      if (img) {
+        img.src = `images/blue-${currentSemester}.png`;
+        img.alt = `Semester ${currentSemester}`;
+      }
+      if (text) text.textContent = `Semester ${currentSemester}`;
+    }
   }
 
-  anchor.href = `semester${currentSemester}.html`;
-  img.src = `images/blue-${currentSemester}.png`;
-  img.alt = `Semester ${currentSemester}`;
-  text.textContent = `Semester ${currentSemester}`;
+  // ==============================
+  // HELP PAGE TYPEWRITER
+  // ==============================
+  const thanksText = document.getElementById("thanks-text");
+  if (thanksText) {
+    const text = "Thank you for contacting us!";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        thanksText.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 70);
+      }
+    }
+    typeWriter();
+  }
 });
-
-//help page.
-// document.addEventListener("DOMContentLoaded", function () {
-//   const form = document.getElementById("questionForm");
-//   const nameInput = document.getElementById("userName");
-//   const questionInput = document.getElementById("userQuestion");
-//   const discussionArea = document.getElementById("discussionArea");
-
-//   form.addEventListener("submit", function (event) {
-//     event.preventDefault();
-
-//     const name = nameInput.value.trim();
-//     const question = questionInput.value.trim();
-
-//     if (!question) return;
-
-//     const post = document.createElement("div");
-//     post.classList.add("question-post");
-
-//     post.innerHTML = `
-//         <strong>${name || "Anonymous"} asked:</strong>
-//         <p>${question}</p>
-//         <button class="reply-btn">Reply</button>
-//         <div class="replies"></div>
-//       `;
-
-//     discussionArea.prepend(post);
-
-//     nameInput.value = "";
-//     questionInput.value = "";
-
-//     const replyBtn = post.querySelector(".reply-btn");
-//     const repliesContainer = post.querySelector(".replies");
-
-//     replyBtn.addEventListener("click", function () {
-//       if (post.querySelector(".reply-form")) return;
-
-//       const replyForm = document.createElement("form");
-//       replyForm.classList.add("reply-form");
-//       replyForm.innerHTML = `
-//           <input type="text" class="reply-name" placeholder="Your Name (optional)" />
-//           <textarea class="reply-text" rows="2" placeholder="Your reply..." required></textarea>
-//           <button type="submit">Post Reply</button>
-//         `;
-
-//       repliesContainer.before(replyForm);
-
-//       replyForm.addEventListener("submit", function (e) {
-//         e.preventDefault();
-
-//         const replyName = replyForm.querySelector(".reply-name").value.trim();
-//         const replyText = replyForm.querySelector(".reply-text").value.trim();
-
-//         if (!replyText) return;
-
-//         const reply = document.createElement("div");
-//         reply.classList.add("reply");
-//         reply.innerHTML = `
-//             <strong>${replyName || "Anonymous"} replied:</strong>
-//             <p>${replyText}</p>
-//           `;
-
-//         repliesContainer.appendChild(reply);
-
-//         replyForm.remove();
-//       });
-//     });
-//   });
-// });
-
-const text = "Thank you for contacting us!";
-let i = 0;
-function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("thanks-text").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 70);
-  }
-}
-typeWriter();
-
-
