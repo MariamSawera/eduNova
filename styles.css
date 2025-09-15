@@ -1,7 +1,6 @@
 body {
   font-family: sans-serif;
   background-color: white;
-
 }
 html {
   scroll-behavior: smooth;
@@ -9,11 +8,10 @@ html {
 
 html,
 body {
-  min-height: 100%;   
+  min-height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-
 }
 
 body {
@@ -32,13 +30,10 @@ nav {
   top: 0;
   z-index: 1000;
 
-  left: 0;          /* anchor navbar to left edge */
-  right: 0;         /* anchor navbar to right edge */
-  width: 100%;      /* full width */
+  left: 0; /* anchor navbar to left edge */
+  right: 0; /* anchor navbar to right edge */
+  width: 100%; /* full width */
   box-sizing: border-box; /* include padding inside width */
-
-  
-  
 }
 
 /* Logo styling */
@@ -66,7 +61,6 @@ nav ul li {
 body.no-scroll {
   overflow: hidden;
 }
-
 
 nav ul li a {
   color: white;
@@ -110,16 +104,13 @@ nav ul li a.active::after {
 
 /* dropdwon */
 
-
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-
-    #nav-links {
+  #nav-links {
     max-height: calc(100vh - 80px); /* account for fixed navbar height */
     overflow-y: auto;
     overflow-x: hidden;
-        padding-bottom: 1rem; /* extra space so last item isn’t cut off */
-
+    padding-bottom: 1rem; /* extra space so last item isn’t cut off */
   }
 
   nav {
@@ -144,13 +135,12 @@ nav ul li a.active::after {
     animation: fadeIn 0.3s ease;
   }
 
-    nav ul li a.active::after {
-    bottom: 0;             
-    left: 50%;           
+  nav ul li a.active::after {
+    bottom: 0;
+    left: 50%;
     transform: translateX(-50%);
-    width: 30%;           
+    width: 30%;
   }
-
 
   nav ul li {
     text-align: center;
@@ -189,7 +179,6 @@ nav ul li a.active::after {
   }
 }
 
-
 .hero {
   background-image: url("./images/banner_img.png");
   background-size: cover;
@@ -209,13 +198,12 @@ nav ul li a.active::after {
   }
 }
 
-
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   padding: 2rem;
-  }
+}
 
 .card {
   padding: 1rem;
@@ -223,7 +211,7 @@ nav ul li a.active::after {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.card h3{
+.card h3 {
   color: #24344d;
   margin-bottom: 0.5rem;
 }
@@ -357,8 +345,6 @@ nav ul li a.active::after {
   border-radius: 10px;
 }
 
-
-
 @media screen and (max-width: 1024px) {
   .dashboard {
     grid-template-columns: repeat(2, 1fr);
@@ -421,7 +407,7 @@ a {
   padding-bottom: 14px;
 }
 
-.card-semester p{
+.card-semester p {
   font-weight: bold;
 }
 
@@ -472,8 +458,6 @@ a {
   }
 }
 
-
-
 /* .resource-links {
   display: flex;
   gap: 12px;
@@ -490,7 +474,6 @@ a {
   transform: scale(1.2);
   opacity: 0.8;
 } */
-
 
 /* books.html */
 
@@ -631,7 +614,6 @@ a {
   }
 }
 
-
 /* subjects.html */
 .instructor-container {
   display: flex;
@@ -671,13 +653,12 @@ a {
   margin: 8px 0;
 }
 
-
-.instructor-card p, a {
+.instructor-card p,
+a {
   font-size: 14px;
   color: #555;
   margin-bottom: 15px;
 }
-
 
 .resources {
   margin-top: 10px;
@@ -696,19 +677,18 @@ a {
   /* border: 3px solid #1e6268;   */
 }
 
-
 .notes {
   background-color: #00796b;
 }
 
-.notes:hover{
+.notes:hover {
   background-color: #004d40;
 }
-.youtube{
+.youtube {
   background-color: #d32f2f;
 }
 
-.youtube:hover{
+.youtube:hover {
   background-color: #b71c1c;
 }
 
@@ -745,7 +725,6 @@ a {
   /* padding: 10px; */
   max-width: 800px;
 }
-
 
 .intro p {
   font-size: 1.5rem;
@@ -998,7 +977,6 @@ th {
   background-color: #ffe69c !important;
 }
 
-
 /* about.html */
 .about-container {
   display: flex;
@@ -1051,11 +1029,10 @@ th {
   align-items: center;
   padding: 3rem;
   margin: 2%;
-
 }
 
 .contact {
-    background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
   border-radius: 16px;
   padding: 40px;
   max-width: 600px;
@@ -1287,7 +1264,6 @@ th {
     background-color: #2aafa0; 
 } */
 
-
 /* //events.html */
 .events-section {
   display: flex;
@@ -1338,8 +1314,6 @@ th {
 .event-card button:hover {
   background-color: #ddd;
 }
-
-
 
 /* help page */
 /* ===== Help Page ===== */
@@ -1498,8 +1472,7 @@ button:hover {
   color: #24344d;
 }
 
-
-.login-card{
+.login-card {
   padding: 30px 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1508,15 +1481,13 @@ button:hover {
   text-align: center;
 }
 
-.login-card h2{
+.login-card h2 {
   color: #1e3a5f;
   margin-bottom: 20px;
-
 }
 
 .login-card input[type="email"],
-.login-card input[type="password"]
-{
+.login-card input[type="password"] {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -1525,26 +1496,24 @@ button:hover {
   font-size: 16px;
 }
 
-.login-card .login-btn{
+.login-card .login-btn {
   background-color: #00695c;
-
-
 }
-.login-card .login-btn:hover{
+.login-card .login-btn:hover {
   background-color: #004d40;
 }
 
-.login-card .register-btn{
+.login-card .register-btn {
   background-color: #f5f5f5;
   color: #333;
   border: 1px solid #ccc;
 }
 
-.login-card .register-btn:hover{
+.login-card .register-btn:hover {
   background-color: #e0e0e0;
 }
 
-.login-card .forgot{
+.login-card .forgot {
   display: block;
   margin-top: 10px;
   font-size: 14px;
@@ -1552,11 +1521,9 @@ button:hover {
   text-decoration: none;
 }
 
-.login-card .forgot:hover{
+.login-card .forgot:hover {
   text-decoration: underline;
 }
-
-
 
 /* gallery page */
 .project-container {
@@ -1568,7 +1535,7 @@ button:hover {
 }
 
 .project-card {
-  background: linear-gradient(145deg, #ffffff, #f0f8fb); 
+  background: linear-gradient(145deg, #ffffff, #f0f8fb);
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 173, 239, 0.4);
   overflow: hidden;
@@ -1576,15 +1543,14 @@ button:hover {
   flex-direction: column;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 350px; 
-  margin: auto; 
+  max-width: 350px;
+  margin: auto;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 25px rgba(0, 173, 239, 0.6);
-    background: linear-gradient(145deg, #f8fdff, #e6f7fa); 
- 
+  background: linear-gradient(145deg, #f8fdff, #e6f7fa);
 }
 
 .image-wrapper {
@@ -1599,18 +1565,17 @@ button:hover {
   object-fit: cover;
   background-color: #f0f0f0;
   transition: transform 0.4s ease;
-  max-width: 350px; 
+  max-width: 350px;
   margin: auto;
 }
 
 .project-card img {
-  height: auto;        /* Keep aspect ratio */
-  display: block;      /* Remove inline gap */
+  height: auto; /* Keep aspect ratio */
+  display: block; /* Remove inline gap */
 }
 
 .project-card:hover img {
   transform: scale(1.05);
-  
 }
 
 .project-card h3 {
@@ -1660,8 +1625,6 @@ button:hover {
   }
 }
 
-
-
 /* announcement page */
 
 .announcementAll-section {
@@ -1675,7 +1638,7 @@ button:hover {
 
 /* Card Styling */
 .announcementAll-card {
-    position: relative;
+  position: relative;
 
   display: flex;
   background: #fff;
@@ -1683,7 +1646,7 @@ button:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-   padding: 35px; /*   fix this setting the text in box was 15 */
+  padding: 35px; /*   fix this setting the text in box was 15 */
   align-items: center;
 }
 .status {
@@ -1760,7 +1723,6 @@ button:hover {
   background: #2c80b4;
 }
 
-
 @media (max-width: 500px) {
   .announcementAll-card {
     flex-direction: column;
@@ -1774,19 +1736,16 @@ button:hover {
 }
 
 @media screen and (max-width: 768px) {
-
-.padding{
-  padding:0 30px;
-}
+  .padding {
+    padding: 0 30px;
+  }
 }
 @media (max-width: 768px) {
-    .intro p  {
-      font-size: 1rem;
-    }
+  .intro p {
+    font-size: 1rem;
+  }
 }
 
-
-/* ===== Modal Overlay ===== */
 /* ===== Modal Overlay ===== */
 .modal {
   display: none;
@@ -1827,7 +1786,7 @@ button:hover {
   right: 12px;
   background: transparent;
   border: none;
-  font-size: 2rem;   /* bigger for mobile */
+  font-size: 2rem; /* bigger for mobile */
   line-height: 1;
   color: #555;
   cursor: pointer;
@@ -1900,9 +1859,6 @@ button:hover {
   background: #004d40;
 }
 
-
-
-
 .btn-secondary {
   background: #e5e7eb;
   color: #111;
@@ -1914,15 +1870,21 @@ button:hover {
 
 /* ===== Animations ===== */
 @keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ===== Responsive Fixes ===== */
 @media (max-width: 768px) {
   .modal-content {
     padding: 20px;
-    max-width: 90%;   /* leaves space from sides */
+    max-width: 90%; /* leaves space from sides */
   }
   .modal-title {
     font-size: 1.2rem;
@@ -1931,7 +1893,6 @@ button:hover {
     font-size: 1.6rem; /* scale down slightly */
     top: 8px;
     right: 8px;
-    /* right: -100px; */
   }
 }
 
@@ -1939,7 +1900,7 @@ button:hover {
   .modal-content {
     padding: 18px;
     border-radius: 12px;
-    max-width: 95%;   /* extra space on smallest screens */
+    max-width: 95%; /* extra space on smallest screens */
   }
   .modal-title {
     font-size: 1.1rem;
