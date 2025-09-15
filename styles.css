@@ -1892,13 +1892,16 @@ button:hover {
 }
 
 .btn-primary {
-  background: #2563eb;
+  background: #00796b;
   color: white;
 }
 
 .btn-primary:hover {
-  background: #1d4ed8;
+  background: #004d40;
 }
+
+
+
 
 .btn-secondary {
   background: #e5e7eb;
