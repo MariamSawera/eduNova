@@ -1930,8 +1930,8 @@ button:hover {
   .modal-close {
     font-size: 1.6rem; /* scale down slightly */
     top: 8px;
-    /* right: 8px; */
-    right: -100px;
+    right: 8px;
+    /* right: -100px; */
   }
 }
 
