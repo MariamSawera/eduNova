@@ -1711,7 +1711,7 @@ button:hover {
   display: inline-block;
   margin-top: 8px;
   padding: 6px 12px;
-  background: #3498db;
+  background: #00796b;
   color: white;
   border-radius: 6px;
   text-decoration: none;
@@ -1720,7 +1720,7 @@ button:hover {
 }
 
 .announcementAll-link:hover {
-  background: #2c80b4;
+  background: #004d40;
 }
 
 @media (max-width: 500px) {
