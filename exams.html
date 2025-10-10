@@ -12,48 +12,188 @@
     <link rel="stylesheet" href="styles.css" />
     <style>
       /* Extra styles for the exams page */
-      .exam-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin: 20px;
-      }
+  body {
+    background-color: #f9fafc;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
 
-      .next-exam {
-        flex: 1 1 300px;
-        background: #fff;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      }
+  .heading-exams {
+    text-align: center;
+    margin-top: 40px;
+  }
 
-      table.exam-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-      }
+  .heading-exams h1 {
+    font-size: 2rem;
+    color: #2e3b55;
+    margin-bottom: 10px;
+  }
 
-      table.exam-table th,
-      table.exam-table td {
-        border: 1px solid #ccc;
-        padding: 8px;
-        text-align: center;
-      }
+  .heading-exams img {
+    width: 48px;
+    height: 48px;
+  }
 
-      table.exam-table th {
-        background-color: #f4f4f4;
-      }
+  /* ======= Exam Cards ======= */
+  .exam-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 50px;
+  }
 
-      .next-exam-row {
-        background-color: #fff9c4 !important;
-        font-weight: bold;
-      }
+  .next-exam {
+  background: linear-gradient(135deg, #eef2ff, #ffffff);
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.12);
+  width: 340px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-      #countdown {
-        font-size: 1.1em;
-        font-weight: bold;
-        color: #d32f2f;
-      }
+.next-exam:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.next-exam::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(circle at center, rgba(92, 107, 192, 0.15), transparent 70%);
+  z-index: 0;
+}
+
+.next-exam h2 {
+  font-size: 22px;
+  color: #2a3d66;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.next-exam p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+#countdown {
+  font-size: 16px;
+  font-weight: 600;
+  color: #d32f2f;
+  background: #fff3e0;
+  border: 1px solid #ffe0b2;
+  border-radius: 8px;
+  padding: 8px 15px;
+  margin-top: 12px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+  .next-exam h2 {
+    text-align: center;
+    color: #2a3d66;
+    border-bottom: 2px solid #d0d7ff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .exam-item {
+    background: #eef2ff;
+    border-left: 4px solid #5c6bc0;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+
+  .exam-item strong {
+    color: #1a237e;
+  }
+
+  /* ======= Exam Table ======= */
+  .exam-table {
+    width: 90%;
+    margin: 30px auto 60px;
+    border-collapse: collapse;
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .exam-table th,
+  .exam-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .exam-table th {
+    background-color: #f0f2fa;
+    color: #2e3b55;
+    font-weight: 600;
+  }
+
+  .exam-table tr:nth-child(even) {
+    background-color: #fafbff;
+  }
+
+  .exam-table tr:hover {
+    background-color: #f3f5ff;
+  }
+
+  .next-exam-row {
+    background-color: #fff8d5 !important;
+    font-weight: 600;
+  }
+
+  /* ======= Responsive Design ======= */
+  @media (max-width: 768px) {
+    .exam-container {
+      margin: 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .next-exam {
+      width: 90%;
+    }
+
+    .exam-table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+
+    .exam-table th,
+    .exam-table td {
+      padding: 8px;
+      font-size: 0.85rem;
+    }
+  }
+
+  /* Countdown style (optional future use) */
+  #countdown {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #d32f2f;
+  }
     </style>
   </head>
   <body>
@@ -87,17 +227,22 @@
       <img src="./images/icons8-clock-48.png" alt="Clock icon" />
     </div>
 
-    <div id="clock"></div>
+<div style="display:flex; justify-content:center;">
+  <div id="clock"></div>
+</div>
 
 <div class="exam-container">
+  
+
+<div class="next-exam">
+  <h2>Next Exam</h2>
+  <div class="next-exam-details"></div>
+  <div id="countdown"></div>
+</div>
+
   <div class="next-exam">
     <h2>Upcoming Exams</h2>
     <div class="upcoming-exams"></div>
-  </div>
-
-  <div class="next-exam">
-    <h2>Next Exam</h2>
-    <div class="next-exam-details"></div>
   </div>
 </div>
 
@@ -139,5 +284,166 @@
 
 
     <script src="script.js"></script>
+    <script>
+      // =================== EXAM DATA ===================
+const exams = [
+  {
+    no: 1,
+    subject: "Information Technology Infrastructure",
+    code: "INFT-520",
+    date: "2025-10-13",
+    day: "Monday",
+    time: "11:00 AM - 12:00 PM",
+    room: "Room 10 & 8",
+  },
+  {
+    no: 2,
+    subject: "Distributed Computing",
+    code: "INFT-522",
+    date: "2025-10-14",
+    day: "Tuesday",
+    time: "11:00 AM - 12:00 PM",
+    room: "Room 10 & 8",
+  },
+  {
+    no: 3,
+    subject: "Mobile Application Development",
+    code: "INFT-524",
+    date: "2025-10-15",
+    day: "Wednesday",
+    time: "11:00 AM - 12:00 PM",
+    room: "Room 10 & 8",
+  },
+  {
+    no: 4,
+    subject: "Data Science",
+    code: "INFT-526",
+    date: "2025-10-16",
+    day: "Thursday",
+    time: "11:00 AM - 12:00 PM",
+    room: "Room 1",
+  },
+  {
+    no: 5,
+    subject: "IT Project Management",
+    code: "INFT-530",
+    date: "2025-10-17",
+    day: "Friday",
+    time: "11:00 AM - 12:00 PM",
+    room: "Room 1 & 2",
+  },
+  {
+    no: 6,
+    subject: "Introduction to Sociology",
+    code: "INFT-528",
+    date: "2025-10-20",
+    day: "Monday",
+    time: "11:00 AM - 12:00 PM",
+    room: "Room 1 & 2",
+  },
+];
+
+// =================== PAGE LOGIC ===================
+const tbody = document.querySelector(".exam-table tbody");
+const nextExamDiv = document.querySelector(".next-exam-details");
+const upcomingExamsDiv = document.querySelector(".upcoming-exams");
+const heading = document.querySelector(".heading");
+
+// Update heading for Midterm/Final
+heading.textContent = "Midterm Examination 2025";
+
+// Insert rows in table
+exams.forEach((exam) => {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>${exam.no}</td>
+    <td>${exam.code} - ${exam.subject}</td>
+    <td>${exam.date}</td>
+    <td>${exam.day}</td>
+    <td>${exam.time}</td>
+    <td>${exam.room}</td>
+  `;
+  tbody.appendChild(tr);
+});
+
+// =================== DETECT NEXT & UPCOMING ===================
+const today = new Date();
+const upcoming = exams.filter((e) => new Date(e.date) > today);
+const nextExam = upcoming.length > 0 ? upcoming[0] : null;
+
+// Highlight next exam in table
+if (nextExam) {
+  const rows = Array.from(tbody.rows);
+  rows.forEach((row) => {
+    if (row.cells[1].textContent.includes(nextExam.code)) {
+      row.classList.add("next-exam-row");
+    }
+  });
+
+  // Display Next Exam
+  nextExamDiv.innerHTML = `
+    <p><strong>${nextExam.subject}</strong></p>
+    <p>${nextExam.date} (${nextExam.day})</p>
+    <p>Time: ${nextExam.time}</p>
+    <p>Room: ${nextExam.room}</p>
+  `;
+
+  // Display Upcoming Exams
+  const upcomingList = upcoming.slice(1);
+  if (upcomingList.length > 0) {
+    upcomingExamsDiv.innerHTML = upcomingList
+      .map(
+        (e) => `
+        <div class="exam-item">
+          <p><strong>${e.subject}</strong> (${e.date})</p>
+        </div>
+      `
+      )
+      .join("");
+  } else {
+    upcomingExamsDiv.innerHTML = `<p>No more upcoming exams 🎉</p>`;
+  }
+} else {
+  nextExamDiv.innerHTML = `<p>All exams completed 🎓</p>`;
+  upcomingExamsDiv.innerHTML = `<p>Nothing upcoming!</p>`;
+}
+
+
+// Countdown Timer for Next Exam
+function startCountdown(examDate) {
+  const countdownEl = document.getElementById("countdown");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = new Date(examDate).getTime() - now;
+
+    if (distance <= 0) {
+      countdownEl.innerHTML = "Exam is happening now!";
+      countdownEl.style.color = "#2e7d32";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    countdownEl.innerHTML = `📘 Paper starting in 
+      <strong>${days}d ${hours}h ${minutes}m</strong>`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 60000); // update every minute
+}
+
+// Start countdown when next exam is available
+if (nextExam) {
+  const examDateTime = `${nextExam.date}T11:00:00`; // exam starts at 11 AM
+  startCountdown(examDateTime);
+}
+
+
+    </script>
   </body>
 </html>
