@@ -860,7 +860,7 @@ th {
   transform: scale(1.02);
 } */
 
-.heading-exams {
+/* .heading-exams {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -915,7 +915,7 @@ th {
     width: 36px;
     height: 36px;
   }
-}
+} */
 
 /* Clock */
 /* #clock {
