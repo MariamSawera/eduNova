@@ -925,25 +925,6 @@ th {
   color: #555;
 } */
 
-#clock {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #2e3b55;
-  background: linear-gradient(135deg, #f5f7ff, #e8ecff);
-  padding: 10px 25px;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  margin: 20px auto;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-#clock:hover {
-  background: linear-gradient(135deg, #e0e6ff, #f2f5ff);
-  transform: scale(1.02);
-}
-
 
 
 /* Exam Container Boxes */
