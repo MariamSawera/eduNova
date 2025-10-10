@@ -976,14 +976,13 @@ th {
 } */
 
 /* Countdown */
-#countdown {
+/* #countdown {
   font-weight: bold;
   font-size: 15px;
   color: #d32f2f;
   margin-top: 8px;
 }
 
-/* Exam Table */
 .exam-table {
   max-width: 800px;
   margin: 0 auto;
@@ -1014,8 +1013,8 @@ th {
 .exam-table tr:nth-child(even) {
   background: #f9f9f9;
 }
+  */
 
-/* Mobile Responsive */
 @media (max-width: 600px) {
   .exam-container {
     flex-direction: column;
@@ -1024,19 +1023,19 @@ th {
   .next-exam {
     width: 90%;
   }
+
+  
 }
-/* Highlight next exam row */
-.exam-table tr.next-exam-row {
-  background-color: #fff3cd !important; /* Light yellow highlight */
+/* .exam-table tr.next-exam-row {
+  background-color: #fff3cd !important; 
   font-weight: bold;
   border-left: 4px solid #fbc02d;
 }
 
-/* Optional hover effect */
 .exam-table tr.next-exam-row:hover {
   background-color: #ffe69c !important;
-}
-
+} 
+ */
 /* about.html */
 .about-container {
   display: flex;
