@@ -947,15 +947,15 @@ th {
 
 
 /* Exam Container Boxes */
-.exam-container {
+/* .exam-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   margin-bottom: 30px;
-}
+} */
 
-.next-exam {
+/* .next-exam {
   background: #ffffff;
   padding: 20px 25px;
   border-radius: 12px;
@@ -973,7 +973,7 @@ th {
   margin: 6px 0;
   color: #555;
   font-size: 14px;
-}
+} */
 
 /* Countdown */
 #countdown {
