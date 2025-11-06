@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
           // Sidebar list
           if (announcementDiv) {
             const ul1 = document.createElement("ul");
+            
+
+
             data.forEach((item) => {
               const li = document.createElement("li");
               li.textContent = item.message || "(no message)";
