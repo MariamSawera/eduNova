@@ -10,6 +10,18 @@
       href="./images/icons8-star-filled-96.png"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .announcementAll-link.grey-link {
+  background-color: #6c757d;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+    </style>
   </head>
   <body>
     <nav>
@@ -123,27 +135,30 @@
               ? dueDate.toLocaleDateString()
               : "No due date";
 
-            const card = document.createElement("div");
-            card.className = "announcementAll-card";
-            card.innerHTML = `
-              <div class="status ${statusClass}">${statusText}</div>
-              <div class="icon">
-                <img src="${
-                  data.iconURL ||
-                  "https://cdn-icons-png.flaticon.com/512/2910/2910768.png"
-                }" alt="icon">
-              </div>
-              <div class="content">
-                <h3>${data.Title || "Untitled"}</h3>
-                <p>${data.Description || "No description provided."}</p>
-                <p class="due-date">Due: ${due}</p>
-                ${
-                  data.link
-                    ? `<a href="${data.link}" target="_blank" class="announcementAll-link">View Details</a>`
-                    : ""
-                }
-              </div>
-            `;
+const card = document.createElement("div");
+card.className = "announcementAll-card";
+
+const isPastDue = dueDate && dueDate < today;
+
+card.innerHTML = `
+  <div class="status ${statusClass}">${statusText}</div>
+  <div class="icon">
+    <img src="${data.iconURL || "https://cdn-icons-png.flaticon.com/512/2910/2910768.png"}" alt="icon">
+  </div>
+  <div class="content">
+    <h3>${data.Title || "Untitled"}</h3>
+    <p>${data.Description || "No description provided."}</p>
+    <p class="due-date">Due: ${due}</p>
+    ${
+      data.link
+        ? `<a href="${data.link}" target="_blank" 
+              class="announcementAll-link ${isPastDue ? "grey-link" : ""}">
+              View Details
+           </a>`
+        : ""
+    }
+  </div>
+`;
             section.appendChild(card);
           });
         } catch (error) {
