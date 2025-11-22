@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>23Connect - Exams</title>
@@ -10,222 +11,230 @@
       href="./images/icons8-star-filled-96.png"
     />
     <link rel="stylesheet" href="styles.css" />
+
     <style>
       /* Extra styles for the exams page */
 
-  .heading-exams {
-    text-align: center;
-    margin-top: 40px;
-  }
+      .heading-exams {
+        text-align: center;
+        margin-top: 40px;
+      }
 
-  .heading-exams h1 {
-    font-size: 2rem;
-    color: #2e3b55;
-    margin-bottom: 10px;
-  }
+      .heading-exams h1 {
+        font-size: 2rem;
+        color: #2e3b55;
+        margin-bottom: 10px;
+      }
 
-  .heading-exams img {
-    width: 48px;
-    height: 48px;
-  }
+      .heading-exams img {
+        width: 48px;
+        height: 48px;
+      }
 
-  #clock {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 500;
+      #clock {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #2e3b55;
+        background: linear-gradient(135deg, #f5f7ff, #e8ecff);
+        padding: 10px 25px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        margin: 20px auto;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+
+      #clock:hover {
+        background: linear-gradient(135deg, #e0e6ff, #f2f5ff);
+        transform: scale(1.02);
+      }
+
+      /* Exam Cards */
+      .exam-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        margin: 50px;
+        margin-top: 20px;
+      }
+
+      .next-exam {
+        background: linear-gradient(135deg, #eef2ff, #ffffff);
+        padding: 25px 30px;
+        border-radius: 14px;
+        box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.12);
+        width: 340px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .next-exam:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.18);
+      }
+
+      .next-exam::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        left: -40%;
+        width: 180%;
+        height: 180%;
+        background: radial-gradient(
+          circle at center,
+          rgba(92, 107, 192, 0.15),
+          transparent 70%
+        );
+        z-index: 0;
+      }
+
+      .next-exam h2 {
+        font-size: 22px;
+        color: #2a3d66;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .next-exam p {
+        margin: 8px 0;
+        color: #333;
+        font-size: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      #countdown {
+        font-size: 16px;
+        font-weight: 600;
+        color: #d32f2f;
+        background: #fff3e0;
+        border: 1px solid #ffe0b2;
+        border-radius: 8px;
+        padding: 8px 15px;
+        margin-top: 12px;
+        display: inline-block;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .exam-table {
+        width: 90%;
+        margin: 30px auto 60px;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .exam-table th,
+      .exam-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      .exam-table th {
+        background-color: #f0f2fa;
+        color: #2e3b55;
+        font-weight: 600;
+      }
+
+      .exam-table tr:nth-child(even) {
+        background-color: #fafbff;
+      }
+
+      .exam-table tr:hover {
+        background-color: #f3f5ff;
+      }
+
+      .next-exam-row {
+        background-color: #fff8d5 !important;
+        font-weight: 600;
+      }
+
+      /* Toggle Buttons */
+.toggle-btn {
+  padding: 10px 18px;
+  margin: 5px;
+  border: none;
+  font-size: 0.95rem;
+  background: #e0e4ff;
   color: #2e3b55;
-  background: linear-gradient(135deg, #f5f7ff, #e8ecff);
-  padding: 10px 25px;
   border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  margin: 20px auto;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: inline-block;    /* prevents full-width expansion */
+  width: auto;              /* ensures natural width */
+  white-space: nowrap;      /* prevents text wrap */
 }
 
-#clock:hover {
-  background: linear-gradient(135deg, #e0e6ff, #f2f5ff);
-  transform: scale(1.02);
+.toggle-btn.active {
+  background: #5c6bc0;
+  color: white;
 }
 
+.toggle-btn:hover {
+  transform: scale(1.05);
+}
 
-  /* ======= Exam Cards ======= */
-  .exam-container {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    /* flex-wrap: wrap; */
-    gap: 2rem;
-    margin: 50px;
-    margin-top: 20px;
-  }
-
-  .next-exam {
-  background: linear-gradient(135deg, #eef2ff, #ffffff);
-  padding: 25px 30px;
-  border-radius: 14px;
-  box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.12);
-  width: 340px;
+/* Center the button group */
+.toggle-container {
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 25px;
 }
 
-.next-exam:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.18);
+/* Fix extra spacing on very small screens */
+@media (max-width: 480px) {
+  .toggle-btn {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
 }
+      .toggle-btn.active {
+        background: #5c6bc0;
+        color: white;
+      }
+      .toggle-btn:hover {
+        transform: scale(1.05);
+      }
 
-.next-exam::before {
-  content: "";
-  position: absolute;
-  top: -40%;
-  left: -40%;
-  width: 180%;
-  height: 180%;
-  background: radial-gradient(circle at center, rgba(92, 107, 192, 0.15), transparent 70%);
-  z-index: 0;
-}
+      @media (max-width: 768px) {
+        .exam-container {
+          flex-direction: column;
+          align-items: center;
+        }
 
-.next-exam h2 {
-  font-size: 22px;
-  color: #2a3d66;
-  margin-bottom: 15px;
-  position: relative;
-  z-index: 1;
-}
+        .next-exam {
+          width: 90%;
+        }
 
-.next-exam p {
-  margin: 8px 0;
-  color: #333;
-  font-size: 15px;
-  position: relative;
-  z-index: 1;
-}
-
-#countdown {
-  font-size: 16px;
-  font-weight: 600;
-  color: #d32f2f;
-  background: #fff3e0;
-  border: 1px solid #ffe0b2;
-  border-radius: 8px;
-  padding: 8px 15px;
-  margin-top: 12px;
-  display: inline-block;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-
-  .next-exam h2 {
-    text-align: center;
-    color: #2a3d66;
-    border-bottom: 2px solid #d0d7ff;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-  }
-
-  .exam-item {
-    background: #eef2ff;
-    border-left: 4px solid #5c6bc0;
-    margin-bottom: 10px;
-    padding: 10px 15px;
-    border-radius: 6px;
-  }
-
-  .exam-item strong {
-    color: #1a237e;
-  }
-
-  /* ======= Exam Table ======= */
-  .exam-table {
-    width: 90%;
-    margin: 30px auto 60px;
-    border-collapse: collapse;
-    overflow-x: auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  }
-
-  .exam-table th,
-  .exam-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-    font-size: 0.95rem;
-  }
-
-  .exam-table th {
-    background-color: #f0f2fa;
-    color: #2e3b55;
-    font-weight: 600;
-  }
-
-  .exam-table tr:nth-child(even) {
-    background-color: #fafbff;
-  }
-
-  .exam-table tr:hover {
-    background-color: #f3f5ff;
-  }
-
-  .next-exam-row {
-    background-color: #fff8d5 !important;
-    font-weight: 600;
-  }
-
-  /* ======= Responsive Design ======= */
-  @media (max-width: 768px) {
-    .exam-container {
-      /* margin: 20px; */
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .next-exam {
-      width: 90%;
-    }
-
-    .exam-table {
-      display: block;
-      width: 90%;
-      overflow-x: auto;
-      border-radius: 8px;
-    }
-
-    .exam-table th,
-    .exam-table td {
-      padding: 8px;
-      font-size: 0.85rem;
-    }
-  }
-
-  /* Countdown style (optional future use) */
-  #countdown {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #d32f2f;
-  }
+        .exam-table {
+          display: block;
+          width: 90%;
+          overflow-x: auto;
+          border-radius: 8px;
+        }
+      }
     </style>
   </head>
+
   <body>
     <nav>
       <div class="logo">23Connect</div>
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <!-- <li><a href="index.html#semester">Semesters</a></li> -->
-          <li><a href="semester6.html">Semester</a></li>
-
+        <li><a href="semester6.html">Semester</a></li>
         <li><a href="announcement.html">Announcement</a></li>
-
         <li><a href="subjects.html">Subjects</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="resources.html">Resources</a></li>
         <li><a href="assignments.html">Assignments</a></li>
-        <!-- <li><a href="events.html">Events</a></li> -->
         <li><a href="exams.html" class="active">Exams</a></li>
         <li><a href="help.html">Help</a></li>
         <li><a href="gallery.html">Gallery</a></li>
@@ -241,40 +250,41 @@
       <img src="./images/icons8-clock-48.png" alt="Clock icon" />
     </div>
 
-<div style="display:flex; justify-content:center;">
-  <div id="clock"></div>
-</div>
+    <div style="text-align:center; margin-top:25px;">
+      <button id="midtermBtn" class="toggle-btn active">Midterm</button>
+      <button id="finalBtn" class="toggle-btn">Final</button>
+    </div>
 
-<div class="exam-container">
-  
+    <div style="display: flex; justify-content: center">
+      <div id="clock"></div>
+    </div>
 
-<div class="next-exam">
-  <h2>Next Exam</h2>
-  <div class="next-exam-details"></div>
-  <div id="countdown"></div>
-</div>
+    <div class="exam-container">
+      <div class="next-exam">
+        <h2>Next Exam</h2>
+        <div class="next-exam-details"></div>
+        <div id="countdown"></div>
+      </div>
 
-  <div class="next-exam">
-    <h2>Upcoming Exams</h2>
-    <div class="upcoming-exams"></div>
-  </div>
-</div>
+      <div class="next-exam">
+        <h2>Upcoming Exams</h2>
+        <div class="upcoming-exams"></div>
+      </div>
+    </div>
 
-<!-- Table for exam timetable -->
-<table class="exam-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Subject</th>
-      <th>Date</th>
-      <th>Day</th>
-      <th>Time</th>
-      <th>Room</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
-
+    <table class="exam-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Subject</th>
+          <th>Date</th>
+          <th>Day</th>
+          <th>Time</th>
+          <th>Room</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
     <footer class="footer">
       <div class="footer-content">
@@ -289,175 +299,232 @@
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.linkedin.com/in/mariamsawera?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+          <a
+            href="https://www.linkedin.com/in/mariamsawera"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
           <a href="#"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </footer>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
-    <script src="script.js"></script>
     <script>
-      // =================== EXAM DATA ===================
-const exams = [
-  {
-    no: 1,
-    subject: "Information Technology Infrastructure",
-    code: "INFT-520",
-    date: "2025-10-13",
-    day: "Monday",
-    time: "11:00 AM - 12:00 PM",
-    room: "Room 10 & 8",
-  },
-  {
-    no: 2,
-    subject: "Distributed Computing",
-    code: "INFT-522",
-    date: "2025-10-14",
-    day: "Tuesday",
-    time: "11:00 AM - 12:00 PM",
-    room: "Room 10 & 8",
-  },
-  {
-    no: 3,
-    subject: "Mobile Application Development",
-    code: "INFT-524",
-    date: "2025-10-15",
-    day: "Wednesday",
-    time: "11:00 AM - 12:00 PM",
-    room: "Room 10 & 8",
-  },
-  {
-    no: 4,
-    subject: "Data Science",
-    code: "INFT-526",
-    date: "2025-10-16",
-    day: "Thursday",
-    time: "11:00 AM - 12:00 PM",
-    room: "Room 10 & 8",
-  },
-  {
-    no: 5,
-    subject: "IT Project Management",
-    code: "INFT-530",
-    date: "2025-10-17",
-    day: "Friday",
-    time: "11:00 AM - 12:00 PM",
-    room: "Room 10 & 8",
-  },
-  {
-    no: 6,
-    subject: "Introduction to Sociology",
-    code: "INFT-528",
-    date: "2025-10-24",
-    day: "Friday",
-    time: "10:00 AM - 11:00 PM",
-    room: "Room 10 & 8",
-  },
-];
+      const tbody = document.querySelector(".exam-table tbody");
+      const nextExamDiv = document.querySelector(".next-exam-details");
+      const upcomingExamsDiv = document.querySelector(".upcoming-exams");
 
-// =================== PAGE LOGIC ===================
-const tbody = document.querySelector(".exam-table tbody");
-const nextExamDiv = document.querySelector(".next-exam-details");
-const upcomingExamsDiv = document.querySelector(".upcoming-exams");
-const heading = document.querySelector(".heading");
+    function updateClock() {
+  const now = new Date();
+  
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
 
-// Update heading for Midterm/Final
-heading.textContent = "Midterm Examination 2025";
+  const ampm = hours >= 12 ? "PM" : "AM";
 
-// Insert rows in table
-exams.forEach((exam) => {
-  const tr = document.createElement("tr");
-  tr.innerHTML = `
-    <td>${exam.no}</td>
-    <td>${exam.code} - ${exam.subject}</td>
-    <td>${exam.date}</td>
-    <td>${exam.day}</td>
-    <td>${exam.time}</td>
-    <td>${exam.room}</td>
-  `;
-  tbody.appendChild(tr);
-});
+  // Convert to 12-hour format
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 0 becomes 12
+  hours = hours.toString().padStart(2, "0");
 
-// =================== DETECT NEXT & UPCOMING ===================
-const today = new Date();
-const upcoming = exams.filter((e) => new Date(e.date) > today);
-const nextExam = upcoming.length > 0 ? upcoming[0] : null;
+  document.getElementById("clock").innerHTML =
+    `${hours}:${minutes}:${seconds} <span style="font-size:0.9rem; font-weight:500;">${ampm}</span>`;
+}
 
-// Highlight next exam in table
-if (nextExam) {
-  const rows = Array.from(tbody.rows);
-  rows.forEach((row) => {
-    if (row.cells[1].textContent.includes(nextExam.code)) {
-      row.classList.add("next-exam-row");
-    }
-  });
+setInterval(updateClock, 1000);
+updateClock();
 
-  // Display Next Exam
-  nextExamDiv.innerHTML = `
-    <p><strong>${nextExam.subject}</strong></p>
-    <p>${nextExam.date} (${nextExam.day})</p>
-    <p>Time: ${nextExam.time}</p>
-    <p>Room: ${nextExam.room}</p>
-  `;
 
-  // Display Upcoming Exams
-  const upcomingList = upcoming.slice(1);
-  if (upcomingList.length > 0) {
-    upcomingExamsDiv.innerHTML = upcomingList
-      .map(
-        (e) => `
-        <div class="exam-item">
-          <p><strong>${e.subject}</strong> (${e.date})</p>
-        </div>
-      `
-      )
-      .join("");
+      // ===== MIDTERM DATA =====
+      const midtermExams = [
+        {
+          no: 1,
+          subject: "Information Technology Infrastructure",
+          code: "INFT-520",
+          date: "2025-10-13",
+          day: "Monday",
+          time: "11:00 AM - 12:00 PM",
+          room: "Room 10 & 8",
+        },
+        {
+          no: 2,
+          subject: "Distributed Computing",
+          code: "INFT-522",
+          date: "2025-10-14",
+          day: "Tuesday",
+          time: "11:00 AM - 12:00 PM",
+          room: "Room 10 & 8",
+        },
+        {
+          no: 3,
+          subject: "Mobile Application Development",
+          code: "INFT-524",
+          date: "2025-10-15",
+          day: "Wednesday",
+          time: "11:00 AM - 12:00 PM",
+          room: "Room 10 & 8",
+        },
+        {
+          no: 4,
+          subject: "Data Science",
+          code: "INFT-526",
+          date: "2025-10-16",
+          day: "Thursday",
+          time: "11:00 AM - 12:00 PM",
+          room: "Room 10 & 8",
+        },
+        {
+          no: 5,
+          subject: "IT Project Management",
+          code: "INFT-530",
+          date: "2025-10-17",
+          day: "Friday",
+          time: "11:00 AM - 12:00 PM",
+          room: "Room 10 & 8",
+        },
+        {
+          no: 6,
+          subject: "Introduction to Sociology",
+          code: "INFT-528",
+          date: "2025-10-24",
+          day: "Friday",
+          time: "10:00 AM - 11:00 PM",
+          room: "Room 10 & 8",
+        },
+      ];
+
+      // ===== FINAL EXAMS (PLACEHOLDER) =====
+      const finalExams = [
+        {
+          no: 1,
+          subject: "Final Exam Subject 1",
+          code: "FIN-001",
+          date: "2025-12-03",
+          day: "Wednesday",
+          time: "10:00 AM - 1:00 PM",
+          room: "TBA",
+        },
+        {
+          no: 2,
+          subject: "Final Exam Subject 2",
+          code: "FIN-002",
+          date: "2025-12-05",
+          day: "Friday",
+          time: "10:00 AM - 1:00 PM",
+          room: "TBA",
+        },
+      ];
+
+      // ===== AUTO-SELECT MIDTERM OR FINAL =====
+function autoSelectExam() {
+  const month = new Date().getMonth() + 1; // JS months: 0 = January
+  
+  if (month > 8) {
+    // After August → Final active
+    loadExams(finalExams, "final");
+    midtermBtn.classList.remove("active");
+    finalBtn.classList.add("active");
   } else {
-    upcomingExamsDiv.innerHTML = `<p>No more upcoming exams 🎉</p>`;
+    // January–August → Midterm active
+    loadExams(midtermExams, "midterm");
+    finalBtn.classList.remove("active");
+    midtermBtn.classList.add("active");
   }
-} else {
-  nextExamDiv.innerHTML = `<p>All exams completed 🎓</p>`;
-  upcomingExamsDiv.innerHTML = `<p>Nothing upcoming !</p>`;
 }
 
+      // ===== LOAD FUNCTION =====
+      function loadExams(exams, type) {
+        document.querySelector(".heading").textContent =
+          type === "midterm"
+            ? "Midterm Examination 2025"
+            : "Final Examination 2025";
 
-// Countdown Timer for Next Exam
-function startCountdown(examDate) {
-  const countdownEl = document.getElementById("countdown");
+        tbody.innerHTML = "";
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = new Date(examDate).getTime() - now;
+        exams.forEach((exam) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${exam.no}</td>
+            <td>${exam.code} - ${exam.subject}</td>
+            <td>${exam.date}</td>
+            <td>${exam.day}</td>
+            <td>${exam.time}</td>
+            <td>${exam.room}</td>
+          `;
+          tbody.appendChild(tr);
+        });
 
-    if (distance <= 0) {
-      countdownEl.innerHTML = "Exam is happening now!";
-      countdownEl.style.color = "#2e7d32";
-      return;
-    }
+        const today = new Date();
+        const upcoming = exams.filter((e) => new Date(e.date) > today);
+        const nextExam = upcoming.length ? upcoming[0] : null;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        if (nextExam) {
+          nextExamDiv.innerHTML = `
+            <p><strong>${nextExam.subject}</strong></p>
+            <p>${nextExam.date} (${nextExam.day})</p>
+            <p>Time: ${nextExam.time}</p>
+            <p>Room: ${nextExam.room}</p>
+          `;
 
-    countdownEl.innerHTML = `📘 Paper starting in 
-      <strong>${days}d ${hours}h ${minutes}m</strong>`;
-  }
+          startCountdown(`${nextExam.date}T10:00:00`);
 
-  updateCountdown();
-  setInterval(updateCountdown, 60000); // update every minute
-}
+          upcomingExamsDiv.innerHTML = upcoming
+            .slice(1)
+            .map(
+              (e) => `
+              <div class="exam-item">
+                <p><strong>${e.subject}</strong> (${e.date})</p>
+              </div>
+            `
+            )
+            .join("");
+        } else {
+          nextExamDiv.innerHTML = "<p>All exams completed 🎓</p>";
+          upcomingExamsDiv.innerHTML = "<p>No upcoming exams.</p>";
+        }
+      }
 
-// Start countdown when next exam is available
-if (nextExam) {
-  const examDateTime = `${nextExam.date}T11:00:00`; // exam starts at 11 AM
-  startCountdown(examDateTime);
-}
+      // ===== COUNTDOWN =====
+      function startCountdown(examDate) {
+        const countdownEl = document.getElementById("countdown");
 
+        function update() {
+          const now = new Date();
+          const distance = new Date(examDate) - now;
 
+          if (distance <= 0) {
+            countdownEl.innerHTML = "Exam happening now!";
+            return;
+          }
+
+          const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const h = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+          countdownEl.innerHTML = `📘 Paper starting in <strong>${d}d ${h}h ${m}m</strong>`;
+        }
+
+        update();
+        setInterval(update, 60000);
+      }
+
+      // ===== TOGGLE BUTTONS =====
+      document.getElementById("midtermBtn").onclick = () => {
+        loadExams(midtermExams, "midterm");
+        midtermBtn.classList.add("active");
+        finalBtn.classList.remove("active");
+      };
+
+      document.getElementById("finalBtn").onclick = () => {
+        loadExams(finalExams, "final");
+        finalBtn.classList.add("active");
+        midtermBtn.classList.remove("active");
+      };
+
+      // Load default
+autoSelectExam();
     </script>
   </body>
 </html>
