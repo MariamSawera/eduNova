@@ -6,6 +6,7 @@ This project is currently a static website and is **planned to be redesigned and
 
 ---
 
+
 ## 🌟 Why EduNova?
 
 * 📌 Central place for all class-related materials
@@ -39,39 +40,50 @@ This project is currently a static website and is **planned to be redesigned and
 
 ## 📸 Screenshot
 
-> Home Page Preview
-
+### 🏠 Home Page  
+Central dashboard providing quick access to all academic sections.  
 ![EduNova Home Page](./images/Homepage-23Connect.png)
-> Books Page Preview
 
+### 📚 Books Page  
+Collection of textbooks and reference materials.  
 ![EduNova Books Page](./images/Books.png)
-> Resources Page Preview
 
+### 📂 Resources Page  
+Additional study materials and useful resources.  
 ![EduNova Resources Page](./images/Resources.png)
-> Subject Page Preview
 
+### 📘 Subjects Page  
+Subject-wise organization for better academic clarity.  
 ![EduNova Subject Page](./images/subjects.png)
-> Gallery Page Preview
 
+### 🖼️ Gallery Page  
+Showcases classmates’ projects and creative work.  
 ![EduNova Gallery Page](./images/gallery.png)
-> Exam Page Preview
 
+### 📝 Exams Page  
+Exam-related information and updates.  
 ![EduNova Exam Page](./images/Exam.png)
-> Assignment Page Preview
 
-![EduNova AssignmentPage](./images/Assignment.png)
-> Help Page Preview
+### ✍️ Assignments Page  
+Central location for accessing assignments.  
+![EduNova Assignment Page](./images/Assignment.png)
 
+### 🆘 Help Page  
+Guidance and support for using the platform.  
 ![EduNova Help Page](./images/help.png)
-> AboutUS Page Preview
 
-![EduNova AboutUs Page](./images/Aboutus.png)
-> Semester Page Preview
+### ℹ️ About Us Page  
+Explains the purpose and vision behind EduNova.  
+![EduNova About Us Page](./images/Aboutus.png)
 
+### 🎓 Semester Pages  
+Semester-wise breakdown of subjects and materials.  
 ![EduNova Semester Page](./images/semester.png)
-> Contact Page Preview
 
+### 📞 Contact Page  
+For queries, feedback, and communication.  
 ![EduNova Contact Page](./images/contact.png)
+
 
 ---
 
