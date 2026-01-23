@@ -42,20 +42,36 @@ This project is currently a static website and is **planned to be redesigned and
 > Home Page Preview
 
 ![EduNova Home Page](./images/Homepage-23Connect.png)
+> Books Page Preview
+
 ![EduNova Books Page](./images/Books.png)
+> Resources Page Preview
+
 ![EduNova Resources Page](./images/Resources.png)
+> Subject Page Preview
+
 ![EduNova Subject Page](./images/subjects.png)
+> Gallery Page Preview
+
 ![EduNova Gallery Page](./images/gallery.png)
+> Exam Page Preview
+
 ![EduNova Exam Page](./images/Exam.png)
+> Assignment Page Preview
+
 ![EduNova AssignmentPage](./images/Assignment.png)
+> Help Page Preview
+
 ![EduNova Help Page](./images/help.png)
+> AboutUS Page Preview
+
 ![EduNova AboutUs Page](./images/Aboutus.png)
+> Semester Page Preview
+
 ![EduNova Semester Page](./images/semester.png)
+> Contact Page Preview
 
-
-
-
-
+![EduNova Contact Page](./images/contact.png)
 
 ---
 
