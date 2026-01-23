@@ -6,6 +6,16 @@ This project is currently a static website and is **planned to be redesigned and
 
 ---
 
+## 🌐 Live Demo
+
+You can explore the live version of **EduNova (23Connect)** here:
+
+👉 **Live Website:** https://23connect.netlify.app/
+
+- The site is deployed on **Netlify** for fast, responsive access.
+
+----
+
 
 ## 🌟 Why EduNova?
 
