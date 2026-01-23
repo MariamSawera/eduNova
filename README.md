@@ -1,6 +1,6 @@
-# 🎓 EduNova (2Connect) – Class Resource Hub
+# 🎓 EduNova (23Connect) – Class Resource Hub
 
-**EduNova (also known as 2Connect)** is a centralized class website built to serve as a single hub for all academic resources for me and my classmates. It eliminates the need to ask around for assignments, books, or updates by keeping everything organized and accessible in one place.
+**EduNova (also known as 23Connect)** is a centralized class website built to serve as a single hub for all academic resources for me and my classmates. It eliminates the need to ask around for assignments, books, or updates by keeping everything organized and accessible in one place.
 
 This project is currently a static website and is **planned to be redesigned and rebuilt using the MERN stack** with a modern UI and advanced features.
 
@@ -41,7 +41,7 @@ This project is currently a static website and is **planned to be redesigned and
 
 > Home Page Preview
 
-![EduNova Home Page](./images/homepage.png)
+![EduNova Home Page](./images/Homepage-23Connect.png)
 
 
 ---
