@@ -38,6 +38,17 @@ This project is currently a static website and is **planned to be redesigned and
 
 ---
 
+## 🔗 Backend & Data Management
+
+- 🔥 **Firebase** is used as a lightweight backend for managing dynamic content.
+- 📊 **Google Sheets** is integrated for updating the **Announcements section**, allowing quick updates without modifying the code.
+- This setup enables easy, real-time content management and served as a foundation before transitioning to a full MERN stack.
+
+> Planned upgrade: Replace Firebase + Sheets with a complete MERN-based backend.
+
+
+---
+
 ## 📸 Screenshot
 
 ### 🏠 Home Page  
